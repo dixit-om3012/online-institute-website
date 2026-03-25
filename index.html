@@ -1,0 +1,1089 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="LUITECH Solutions — Premier IT Training Institute in Guwahati, Assam. Master Full Stack Development, Python, Data Science & more. 1000+ students trained, 300+ placed in top companies.">
+  <meta name="keywords" content="IT training Guwahati, coding courses Assam, full stack development, Python training, data science, UI/UX design, LUITECH Solutions">
+  <meta name="author" content="LUITECH Solutions">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="LUITECH Solutions — IT Training Institute Guwahati">
+  <meta property="og:description" content="Professional IT Training Institute helping students build real-world tech careers in Guwahati, Assam.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="en_IN">
+  <title>LUITECH Solutions — IT Training Institute Guwahati, Assam</title>
+  <link rel="icon" type="image/png" href="logo.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Clash+Display:wght@400;500;600;700&family=Bricolage+Grotesque:opsz,wght@12..96,300;12..96,400;12..96,500;12..96,600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ░░ NOISE OVERLAY ░░ -->
+  <div class="noise-overlay" aria-hidden="true"></div>
+
+  <!-- ░░ CURSOR ░░ -->
+  <div class="cursor" id="cursor" aria-hidden="true"></div>
+  <div class="cursor-dot" id="cursor-dot" aria-hidden="true"></div>
+
+
+  <!-- CERTIFICATE POPUP -->
+<div class="cert-overlay" id="certOverlay" role="dialog" aria-modal="true" aria-hidden="true">
+  <div class="cert-box">
+    <div class="cert-topbar"></div>
+
+    <div class="cert-header">
+      <div class="cert-brand">
+        <span class="cert-dot"></span>
+        <span class="cert-brand-name">LUITECH </span>
+      </div>
+      <span class="cert-badge">Official Certificate</span>
+      <button class="cert-close" id="certClose" aria-label="Close">
+        <svg width="13" height="13" viewBox="0 0 13 13" fill="none">
+          <path d="M1 1l11 11M12 1L1 12" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+        </svg>
+      </button>
+    </div>
+
+    <div class="cert-imgwrap">
+      <img src="certificate.png" alt="LUITECH Training Certificate" class="cert-img">
+    </div>
+
+  </div>
+</div>
+
+  <!-- ═══════════════════════════════════════
+       WhatsApp Button
+  ═══════════════════════════════════════ -->
+  <a href="https://wa.me/91999999999?text=Hello%20LUITECH%20Solutions%2C%20I%20want%20to%20know%20about%20your%20courses"
+   class="whatsapp-float"
+   target="_blank"
+   aria-label="Chat on WhatsApp">
+
+   <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp Chat">
+
+</a>
+  
+  <!-- ═══════════════════════════════════════
+       NAVBAR
+  ═══════════════════════════════════════ -->
+  <header class="navbar" id="navbar" role="banner">
+    <div class="nav-inner">
+      
+      <div class="logo" aria-label="LUITECH Solutions — Home">
+  
+        <div class="logo-icon" aria-hidden="true">
+         <img src="logo1.png" alt="LUITECH Logo" width="150" height="100">
+        </div>
+
+        <!-- <div class="logo-wordmark">
+         <span class="logo-name">LUITECH</span>
+         <span class="logo-sub">Solutions</span>
+       </div> -->
+
+      </div>
+
+      <nav class="nav-menu" id="nav-menu" role="navigation" aria-label="Primary navigation">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link">About</a>
+        <!-- <a href="courses.html" class="nav-link">Courses</a> -->
+         <div class="nav-dropdown-wrap">
+  <a href="courses.html" class="nav-link nav-link--courses" aria-haspopup="true" aria-expanded="false">
+    Courses
+    <svg class="nav-chevron" width="10" height="10" viewBox="0 0 10 10" fill="none" aria-hidden="true">
+      <path d="M2 3.5l3 3 3-3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+    </svg>
+  </a>
+  <div class="nav-dropdown" role="menu">
+    <a href="courses.html#cat-redhat"      class="nav-dd-item" role="menuitem"><span class="dd-icon">🐧</span>RedHat</a>
+    <a href="courses.html#cat-cloud"       class="nav-dd-item" role="menuitem"><span class="dd-icon">☁️</span>Cloud Computing</a>
+    <a href="courses.html#cat-devops"      class="nav-dd-item" role="menuitem"><span class="dd-icon">⚙️</span>DevOps</a>
+    <a href="courses.html#cat-datascience" class="nav-dd-item" role="menuitem"><span class="dd-icon">🤖</span>Data Science &amp; AI</a>
+    <a href="courses.html#cat-azure"       class="nav-dd-item" role="menuitem"><span class="dd-icon">🔷</span>Azure / Cloud Infra</a>
+    <a href="courses.html#cat-python"      class="nav-dd-item" role="menuitem"><span class="dd-icon">🐍</span>Python &amp; Programming</a>
+    <a href="courses.html#cat-networking"  class="nav-dd-item" role="menuitem"><span class="dd-icon">🌐</span>Networking &amp; SysAdmin</a>
+    <a href="courses.html#cat-modular"     class="nav-dd-item" role="menuitem"><span class="dd-icon">📦</span>Modular Program</a>
+  </div>
+</div>
+        <a href="training.html" class="nav-link">Training</a>
+        <a href="gallery.html" class="nav-link">Gallery</a>
+        <a href="alumni.html" class="nav-link">Alumni</a>
+        <a href="blog.html" class="nav-link">Blog</a>
+        <a href="review.html" class="nav-link">Reviews</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+        <a href="ragister.html" class="nav-link nav-register">Register</a>
+      </nav>
+
+      <button class="burger" id="burger" aria-label="Open navigation" aria-expanded="false" aria-controls="mobile-nav">
+        <span class="burger-bar"></span>
+        <span class="burger-bar"></span>
+        <span class="burger-bar"></span>
+      </button>
+
+    </div>
+  </header>
+
+  <!-- ░░ MOBILE NAV DRAWER ░░ -->
+  <div class="mobile-drawer" id="mobile-nav" role="dialog" aria-modal="true" aria-label="Navigation menu" aria-hidden="true">
+    <div class="drawer-backdrop" id="drawer-backdrop"></div>
+    <nav class="drawer-panel" role="navigation">
+      <!-- <div class="drawer-header">
+        <div class="logo-wordmark">
+          <span class="logo-name" style="color:#fff">LUITECH</span>
+          <span class="logo-sub" style="color:rgba(255,255,255,.4)">Solutions</span>
+        </div>
+        <button class="drawer-close" id="drawer-close" aria-label="Close navigation">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+            <path d="M4 4l12 12M16 4L4 16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+          </svg>
+        </button>
+      </div> -->
+      <div class="drawer-links">
+        <p>...</p>
+        <a href="index.html" class="drawer-link">Home</a>
+        <a href="about.html" class="drawer-link">About</a>
+        <!-- <a href="courses.html" class="drawer-link">Courses</a> -->
+        <div class="drawer-dropdown-wrap">
+          <button class="drawer-link drawer-dd-toggle" aria-expanded="false">
+            Courses
+            <svg class="drawer-chevron" width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+            <path d="M3 5l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+            </svg>
+         </button>
+          <div class="drawer-dd-sub" aria-hidden="true">
+            <a href="courses.html#cat-redhat"      class="drawer-sub-link">🐧 RedHat</a>
+            <a href="courses.html#cat-cloud"       class="drawer-sub-link">☁️ Cloud Computing</a>
+            <a href="courses.html#cat-devops"      class="drawer-sub-link">⚙️ DevOps</a>
+            <a href="courses.html#cat-datascience" class="drawer-sub-link">🤖 Data Science &amp; AI</a>
+            <a href="courses.html#cat-azure"       class="drawer-sub-link">🔷 Azure / Cloud Infra</a>
+            <a href="courses.html#cat-python"      class="drawer-sub-link">🐍 Python &amp; Programming</a>
+            <a href="courses.html#cat-networking"  class="drawer-sub-link">🌐 Networking &amp; SysAdmin</a>
+            <a href="courses.html#cat-modular"     class="drawer-sub-link">📦 Modular Program</a>
+          </div>
+        </div>
+        <a href="training.html" class="drawer-link">Training</a>
+        <a href="gallery.html" class="drawer-link">Gallery</a>
+        <a href="alumni.html" class="drawer-link">Alumni</a>
+        <a href="blog.html" class="drawer-link">Blog</a>
+        <a href="review.html" class="drawer-link">Reviews</a>
+        <a href="contact.html" class="drawer-link">Contact</a>
+        <a href="ragister.html" class="drawer-link drawer-register">Register Now →</a>
+      </div>
+    </nav>
+  </div>
+
+  <main>
+
+    <!-- ═══════════════════════════════════════
+         HERO
+    ═══════════════════════════════════════ -->
+    <section class="hero" id="home" aria-labelledby="hero-h1">
+
+      <!-- Canvas for particle field -->
+      <canvas class="hero-canvas" id="hero-canvas" aria-hidden="true"></canvas>
+
+      <div class="hero-bg-mesh" aria-hidden="true">
+        <div class="mesh-orb mesh-orb-1"></div>
+        <div class="mesh-orb mesh-orb-2"></div>
+        <div class="mesh-orb mesh-orb-3"></div>
+      </div>
+
+      <div class="hero-lines" aria-hidden="true">
+        <div class="h-line"></div><div class="h-line"></div><div class="h-line"></div>
+        <div class="h-line"></div><div class="h-line"></div><div class="h-line"></div>
+      </div>
+
+      <div class="hero-content">
+
+        <div class="hero-eyebrow fade-up" style="--d:0s">
+          <span class="eyebrow-dot" aria-hidden="true"></span>
+          <span>Now Enrolling · Batch 2025 · Guwahati</span>
+        </div>
+
+        <h1 class="hero-headline fade-up" id="hero-h1" style="--d:.1s">
+          <span class="line-wrap"><span class="line-text">Learn Future</span></span>
+          <span class="line-wrap"><span class="line-text">Skills <em class="red-italic">with</em></span></span>
+          <span class="line-wrap"><span class="line-text hero-brand">LUITECH</span></span>
+        </h1>
+
+        <p class="hero-sub fade-up" style="--d:.3s">
+          Professional IT Training Institute in Guwahati helping<br class="br-desktop"> students build real‑world tech careers.
+        </p>
+
+        <div class="hero-cta fade-up" style="--d:.42s">
+          <a href="courses.html" class="btn-primary">
+            <span>Explore Courses</span>
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <a href="#register" class="btn-ghost">Register Now</a>
+        </div>
+
+        <div class="hero-stats fade-up" style="--d:.56s">
+          <div class="hstat">
+            <strong>1000+</strong><span>Students</span>
+          </div>
+          <div class="hstat-sep" aria-hidden="true"></div>
+          <div class="hstat">
+            <strong>300+</strong><span>Placed</span>
+          </div>
+          <div class="hstat-sep" aria-hidden="true"></div>
+          <div class="hstat">
+            <strong>25+</strong><span>Courses</span>
+          </div>
+          <div class="hstat-sep" aria-hidden="true"></div>
+          <div class="hstat">
+            <strong>5+</strong><span>Years</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Floating code chip -->
+      
+      <div class="hero-chip chip-1 fade-up" style="--d:.6s" aria-hidden="true">
+        <span class="chip-dot"></span>
+        <code>DPIIT.. Startup India Certified</code>
+      </div>
+      <div class="hero-chip chip-2 fade-up" style="--d:.72s" aria-hidden="true">
+        <span class="chip-dot chip-green"></span>
+        <code> ISO 9001:2015  <em class="chip-green-text">Certified Organisation ✓</em></code>
+      </div>
+
+      <div class="hero-scroll-hint" aria-hidden="true">
+        <div class="scroll-track"><div class="scroll-thumb"></div></div>
+        <span>scroll</span>
+      </div>
+
+    </section>
+
+    <!-- ═══════════════════════════════════════
+         STATS TICKER
+    ═══════════════════════════════════════ -->
+    <section class="stats-band" aria-label="Key statistics">
+      <div class="band-inner">
+        <div class="stat-item reveal-fade">
+          <span class="stat-count" data-target="1000" data-suffix="+">0</span>
+          <span class="stat-lbl">Students Trained</span>
+        </div>
+        <div class="stat-sep" aria-hidden="true"></div>
+        <div class="stat-item reveal-fade" style="--rd:.1s">
+          <span class="stat-count" data-target="300" data-suffix="+">0</span>
+          <span class="stat-lbl">Placements</span>
+        </div>
+        <div class="stat-sep" aria-hidden="true"></div>
+        <div class="stat-item reveal-fade" style="--rd:.2s">
+          <span class="stat-count" data-target="25" data-suffix="+">0</span>
+          <span class="stat-lbl">Courses Offered</span>
+        </div>
+        <div class="stat-sep" aria-hidden="true"></div>
+        <div class="stat-item reveal-fade" style="--rd:.3s">
+          <span class="stat-count" data-target="5" data-suffix="+">0</span>
+          <span class="stat-lbl">Years Experience</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════
+     OFFICIAL TRAINING PARTNER — RED HAT (SHORT)
+     Paste ABOVE the COURSES section
+═══════════════════════════════════════ -->
+
+<style>
+.rh-band {
+  position: relative;
+  background: #0d0d0d;
+  border-top: 1px solid rgba(225,29,46,0.15);
+  border-bottom: 1px solid rgba(225,29,46,0.15);
+  padding: 4rem 0;
+  overflow: hidden;
+}
+.rh-band-glow {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: 600px; height: 200px;
+  background: radial-gradient(ellipse, rgba(225,29,46,0.1) 0%, transparent 70%);
+  pointer-events: none;
+}
+.rh-band-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  align-items: center;
+  gap: 3.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* Logo block */
+.rh-logo-block {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-shrink: 0;
+}
+.rh-hat {
+  width: 48px; height: 48px;
+  animation: rh-float 3.5s ease-in-out infinite;
+  filter: drop-shadow(0 0 10px rgba(225,29,46,0.5));
+}
+@keyframes rh-float {
+  0%,100% { transform: translateY(0); }
+  50%      { transform: translateY(-6px); }
+}
+.rh-name { font-family: 'Clash Display','Bricolage Grotesque',sans-serif; font-size: 1.4rem; font-weight: 700; color: #fff; letter-spacing: -0.02em; line-height: 1; }
+.rh-name span { color: #E11D2E; }
+.rh-sub { font-family: 'JetBrains Mono', monospace; font-size: 0.65rem; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.3); margin-top: 0.2rem; }
+
+/* Divider */
+.rh-vdivider { width: 1px; height: 60px; background: rgba(255,255,255,0.08); flex-shrink: 0; }
+@media(max-width:640px){ .rh-vdivider { display:none; } }
+
+/* Text block */
+.rh-text-block { flex: 1; min-width: 240px; max-width: 520px; }
+.rh-band-eyebrow {
+  display: inline-flex; align-items: center; gap: 0.4rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.65rem; letter-spacing: 0.14em; text-transform: uppercase;
+  color: #E11D2E; margin-bottom: 0.5rem;
+}
+.rh-dot { width: 5px; height: 5px; border-radius: 50%; background: #E11D2E; box-shadow: 0 0 6px #E11D2E; animation: rh-pulse 1.8s ease-in-out infinite; }
+@keyframes rh-pulse { 0%,100%{opacity:1;} 50%{opacity:0.3;} }
+.rh-band-title { font-family: 'Clash Display','Bricolage Grotesque',sans-serif; font-size: clamp(1.1rem,2.2vw,1.4rem); font-weight: 700; color: #fff; letter-spacing: -0.02em; margin-bottom: 0.45rem; }
+.rh-band-desc { font-size: 0.82rem; color: rgba(255,255,255,0.4); line-height: 1.6; font-family: 'Bricolage Grotesque', sans-serif; }
+
+/* Badge */
+.rh-verified {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  background: rgba(225,29,46,0.1); border: 1px solid rgba(225,29,46,0.3);
+  border-radius: 100px; padding: 0.55rem 1.2rem;
+  font-family: 'JetBrains Mono', monospace; font-size: 0.72rem;
+  color: rgba(255,255,255,0.75); letter-spacing: 0.08em; text-transform: uppercase;
+  white-space: nowrap; flex-shrink: 0;
+  transition: all 0.3s ease;
+}
+.rh-verified:hover { background: rgba(225,29,46,0.18); border-color: rgba(225,29,46,0.6); color: #fff; }
+.rh-check { width: 18px; height: 18px; border-radius: 50%; background: #E11D2E; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+
+/* Reveal */
+.rh-band-inner { opacity: 0; transform: translateY(20px); transition: opacity 0.7s ease, transform 0.7s ease; }
+.rh-band-inner.rh-in { opacity: 1; transform: translateY(0); }
+</style>
+
+<section class="rh-band" id="redhat-partner" aria-label="Red Hat Official Training Partner">
+  <div class="rh-band-glow" aria-hidden="true"></div>
+
+  <div class="rh-band-inner">
+
+    <!-- Logo -->
+    <div class="rh-logo-block">
+      <svg class="rh-hat" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <ellipse cx="24" cy="34" rx="20" ry="6" fill="#E11D2E" opacity="0.15"/>
+        <ellipse cx="24" cy="34" rx="20" ry="6" fill="none" stroke="#E11D2E" stroke-width="1.4"/>
+        <path d="M9 34 C9 34 10 19 17 15 C20 13 22 12 24 12 C26 12 28 13 31 15 C38 19 39 34 39 34" fill="#E11D2E"/>
+        <path d="M11 30 C11 30 13 28.5 24 28.5 C35 28.5 37 30 37 30" stroke="#c41525" stroke-width="1.4" fill="none"/>
+        <ellipse cx="24" cy="12" rx="5" ry="2" fill="#ff4455" opacity="0.5"/>
+        <path d="M15 21 C17 18 20 16.5 24 16.5" stroke="rgba(255,255,255,0.25)" stroke-width="1" stroke-linecap="round"/>
+      </svg>
+      <div>
+        <div class="rh-name"><span>Red</span>Hat</div>
+        <div class="rh-sub">Training Partner</div>
+      </div>
+    </div>
+
+    <div class="rh-vdivider" aria-hidden="true"></div>
+
+    <!-- Text -->
+    <div class="rh-text-block">
+      <div class="rh-band-eyebrow"><span class="rh-dot" aria-hidden="true"></span>Official Partnership</div>
+      <div class="rh-band-title">Official  Red  Hat  Training Partner</div>
+      <p class="rh-band-desc">Red Hat is among the top providers of open-source IT solutions for businesses. With its extensive portfolio of subscription-based products and services, it enables organizations to virtualize expensive, outdated infrastructure and enhance operational flexibility across public, private, hybrid, and multi-cloud deployments.
+Red Hat delivers open-source software solutions that provide dependable, scalable, and efficient platforms for running applications in any organization.
+From an IT professional’s perspective, Red Hat training equips individuals with the skills and confidence needed to enter specialized fields such as cloud administration and virtualization.</p>
+    </div>
+
+    <!-- Badge -->
+    <div class="rh-verified" role="img" aria-label="Verified Red Hat Training Partner">
+      <span class="rh-check" aria-hidden="true">
+        <svg width="9" height="9" viewBox="0 0 9 9" fill="none"><path d="M1.5 4.5l2 2 4-4" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </span>
+      Verified Partner
+    </div>
+
+  </div>
+</section>
+
+<script>
+(function(){
+  var el = document.querySelector('.rh-band-inner');
+  if(!el) return;
+  var obs = new IntersectionObserver(function(entries){
+    if(entries[0].isIntersecting){ el.classList.add('rh-in'); obs.disconnect(); }
+  }, { threshold: 0.2 });
+  obs.observe(el);
+})();
+</script>
+
+    <!-- ═══════════════════════════════════════
+         COURSES
+    ═══════════════════════════════════════ -->
+    <section class="section courses-section" id="courses" aria-labelledby="courses-heading">
+      <div class="container">
+
+        <header class="section-header reveal-fade">
+          <p class="section-eyebrow">Curriculum</p>
+          <h2 id="courses-heading">Featured <span class="text-red">Courses</span></h2>
+          <p class="section-sub">Industry‑aligned curriculum built for real career outcomes — not just certificates.</p>
+        </header>
+
+        <div class="courses-grid">
+
+          <article class="course-card reveal-up" style="--rd:0s" data-index="01">
+            <div class="card-glow" aria-hidden="true"></div>
+            <div class="course-number" aria-hidden="true">01</div>
+            <div class="course-icon-wrap" aria-hidden="true">
+              <svg class="course-svg" viewBox="0 0 48 48" fill="none">
+                <rect x="4" y="10" width="40" height="28" rx="4" stroke="currentColor" stroke-width="1.8"/>
+                <path d="M16 20l-5 4 5 4M32 20l5 4-5 4M22 28l4-8" stroke="#E11D2E" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <div class="course-badge">Most Popular</div>
+            <h3>Full Stack Development</h3>
+            <p>React, Node.js, MongoDB & deployment — build production apps from day one.</p>
+            <div class="course-tags">
+              <span>6 Months</span><span>Beginner → Pro</span>
+            </div>
+            <a href="#register" class="course-link">
+              Learn More
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+            </a>
+          </article>
+
+          <article class="course-card reveal-up" style="--rd:.08s" data-index="02">
+            <div class="card-glow" aria-hidden="true"></div>
+            <div class="course-number" aria-hidden="true">02</div>
+            <div class="course-icon-wrap" aria-hidden="true">
+              <svg class="course-svg" viewBox="0 0 48 48" fill="none">
+                <circle cx="24" cy="24" r="18" stroke="currentColor" stroke-width="1.8"/>
+                <path d="M18 18c1.5-2 3.5-3 6-3s4.5 1 6 3" stroke="#E11D2E" stroke-width="1.8" stroke-linecap="round"/>
+                <path d="M14 28l4-4 4 4 4-8 4 8" stroke="#E11D2E" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <h3>Python Programming</h3>
+            <p>From fundamentals to automation, ML and data pipelines — the language of AI.</p>
+            <div class="course-tags"><span>3 Months</span><span>All Levels</span></div>
+            <a href="#register" class="course-link">Learn More <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></a>
+          </article>
+
+          <article class="course-card reveal-up" style="--rd:.16s" data-index="03">
+            <div class="card-glow" aria-hidden="true"></div>
+            <div class="course-number" aria-hidden="true">03</div>
+            <div class="course-icon-wrap" aria-hidden="true">
+              <svg class="course-svg" viewBox="0 0 48 48" fill="none">
+                <rect x="6" y="8" width="36" height="24" rx="3" stroke="currentColor" stroke-width="1.8"/>
+                <path d="M18 32v6M30 32v6M12 38h24" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+                <path d="M14 18h10M14 24h6" stroke="#E11D2E" stroke-width="1.8" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <h3>Web Development</h3>
+            <p>HTML, CSS, JS and modern tooling — craft pixel-perfect, responsive experiences.</p>
+            <div class="course-tags"><span>3 Months</span><span>Beginner</span></div>
+            <a href="#register" class="course-link">Learn More <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></a>
+          </article>
+
+          <article class="course-card reveal-up" style="--rd:.06s" data-index="04">
+            <div class="card-glow" aria-hidden="true"></div>
+            <div class="course-number" aria-hidden="true">04</div>
+            <div class="course-icon-wrap" aria-hidden="true">
+              <svg class="course-svg" viewBox="0 0 48 48" fill="none">
+                <path d="M8 36l8-14 6 8 6-12 6 10 6-16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                <circle cx="36" cy="12" r="5" stroke="#E11D2E" stroke-width="1.8"/>
+                <circle cx="36" cy="12" r="2" fill="#E11D2E"/>
+              </svg>
+            </div>
+            <div class="course-badge course-badge-new">Trending</div>
+            <h3>Data Science</h3>
+            <p>Analytics, visualisation, machine learning and AI model deployment at scale.</p>
+            <div class="course-tags"><span>6 Months</span><span>Intermediate</span></div>
+            <a href="#register" class="course-link">Learn More <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></a>
+          </article>
+
+          <article class="course-card reveal-up" style="--rd:.14s" data-index="05">
+            <div class="card-glow" aria-hidden="true"></div>
+            <div class="course-number" aria-hidden="true">05</div>
+            <div class="course-icon-wrap" aria-hidden="true">
+              <svg class="course-svg" viewBox="0 0 48 48" fill="none">
+                <rect x="6" y="12" width="20" height="16" rx="3" stroke="currentColor" stroke-width="1.8"/>
+                <rect x="18" y="22" width="20" height="16" rx="3" stroke="#E11D2E" stroke-width="1.8"/>
+                <circle cx="16" cy="20" r="2" fill="#E11D2E"/>
+              </svg>
+            </div>
+            <h3>UI/UX Design</h3>
+            <p>Figma, design systems, user research and prototyping for digital products.</p>
+            <div class="course-tags"><span>3 Months</span><span>All Levels</span></div>
+            <a href="#register" class="course-link">Learn More <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></a>
+          </article>
+
+          <!-- <article class="course-card reveal-up" style="--rd:.22s" data-index="06">
+            <div class="card-glow" aria-hidden="true"></div>
+            <div class="course-number" aria-hidden="true">06</div>
+            <div class="course-icon-wrap" aria-hidden="true">
+              <svg class="course-svg" viewBox="0 0 48 48" fill="none">
+                <path d="M24 8C15.2 8 8 15.2 8 24s7.2 16 16 16 16-7.2 16-16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+                <path d="M32 8c2.5 2.5 4 6 4 10" stroke="#E11D2E" stroke-width="1.8" stroke-linecap="round"/>
+                <path d="M18 20l4 4 8-8" stroke="#E11D2E" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <h3>Digital Marketing</h3>
+            <p>SEO, social media, PPC and analytics — master modern growth strategies.</p>
+            <div class="course-tags"><span>2 Months</span><span>Beginner</span></div>
+            <a href="#register" class="course-link">Learn More <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></a>
+          </article> -->
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════
+         WHY CHOOSE
+    ═══════════════════════════════════════ -->
+    <section class="section why-section" id="about" aria-labelledby="why-heading">
+      <div class="container">
+
+        <div class="why-layout">
+
+          <div class="why-left reveal-fade">
+            <p class="section-eyebrow">Our Edge</p>
+            <h2 id="why-heading">Why <span class="text-red">LUITECH</span><br>stands apart</h2>
+            <p class="why-lead">We don't just teach technology — we architect careers. Every decision, from batch size to curriculum, is built around your outcome.</p>
+            <a href="#register" class="btn-primary" style="margin-top:2.5rem;display:inline-flex">
+              <span>Start Learning</span>
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+            </a>
+          </div>
+
+          <div class="why-right">
+            <div class="feature-card reveal-up" style="--rd:0s">
+              <div class="feature-icon-box" aria-hidden="true">
+                <svg viewBox="0 0 28 28" fill="none"><path d="M14 4l1.8 5.5H22l-4.7 3.4 1.8 5.5L14 15l-5.1 3.4 1.8-5.5L6 9.5h6.2L14 4z" stroke="#E11D2E" stroke-width="1.5" stroke-linejoin="round"/></svg>
+              </div>
+              <div class="feature-text">
+                <h4>Industry Expert Trainers</h4>
+                <p>Professionals from top tech companies — not just academics.</p>
+              </div>
+            </div>
+            <div class="feature-card reveal-up" style="--rd:.07s">
+              <div class="feature-icon-box" aria-hidden="true">
+                <svg viewBox="0 0 28 28" fill="none"><rect x="4" y="6" width="20" height="16" rx="2" stroke="#E11D2E" stroke-width="1.5"/><path d="M9 12h10M9 16h6" stroke="#E11D2E" stroke-width="1.5" stroke-linecap="round"/></svg>
+              </div>
+              <div class="feature-text">
+                <h4>Real World Projects</h4>
+                <p>Portfolio of live projects — exactly what interviewers want to see.</p>
+              </div>
+            </div>
+            <div class="feature-card reveal-up" style="--rd:.14s">
+              <div class="feature-icon-box" aria-hidden="true">
+                <svg viewBox="0 0 28 28" fill="none"><circle cx="14" cy="14" r="9" stroke="#E11D2E" stroke-width="1.5"/><path d="M9.5 14l3 3 6-6" stroke="#E11D2E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+              <div class="feature-text">
+                <h4>Placement Assistance</h4>
+                <p>Dedicated career cell: resume, mock interviews and hiring network.</p>
+              </div>
+            </div>
+            <div class="feature-card reveal-up" style="--rd:.05s">
+              <div class="feature-icon-box" aria-hidden="true">
+                <svg viewBox="0 0 28 28" fill="none"><path d="M5 22l5-9 5 6 4-6 5 9" stroke="#E11D2E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+              <div class="feature-text">
+                <h4>Certification Programs</h4>
+                <p>Industry-recognised certificates that differentiate your resume.</p>
+              </div>
+            </div>
+            <div class="feature-card reveal-up" style="--rd:.12s">
+              <div class="feature-icon-box" aria-hidden="true">
+                <svg viewBox="0 0 28 28" fill="none"><circle cx="10" cy="11" r="3.5" stroke="#E11D2E" stroke-width="1.5"/><circle cx="19" cy="11" r="3.5" stroke="#E11D2E" stroke-width="1.5"/><path d="M4 22c0-3.3 2.7-6 6-6M18 16c3.3 0 6 2.7 6 6" stroke="#E11D2E" stroke-width="1.5" stroke-linecap="round"/></svg>
+              </div>
+              <div class="feature-text">
+                <h4>Small Batch Size</h4>
+                <p>Max 15 students — you're never just a number here.</p>
+              </div>
+            </div>
+            <div class="feature-card reveal-up" style="--rd:.19s">
+              <div class="feature-icon-box" aria-hidden="true">
+                <svg viewBox="0 0 28 28" fill="none"><path d="M14 5v9l5 3" stroke="#E11D2E" stroke-width="1.5" stroke-linecap="round"/><circle cx="14" cy="14" r="10" stroke="#E11D2E" stroke-width="1.5" opacity=".4"/></svg>
+              </div>
+              <div class="feature-text">
+                <h4>Practical Learning</h4>
+                <p>80% hands-on coding. Theory only serves the practice here.</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════
+         TRAINING PROGRAMS
+    ═══════════════════════════════════════ -->
+    <section class="section programs-section" id="programs" aria-labelledby="programs-heading">
+      <div class="programs-bg" aria-hidden="true">
+        <div class="prog-orb prog-orb-1"></div>
+        <div class="prog-orb prog-orb-2"></div>
+      </div>
+      <div class="container">
+
+        <header class="section-header reveal-fade" style="--rd:0s">
+          <p class="section-eyebrow" style="color:rgba(255,255,255,.45)">Pathways</p>
+          <h2 id="programs-heading" style="color:#fff">Training <span class="text-red">Programs</span></h2>
+          <p class="section-sub" style="color:rgba(255,255,255,.4)">Structured pathways from student to professional</p>
+        </header>
+
+        <div class="programs-grid">
+
+          <article class="program-card reveal-up" style="--rd:0s">
+            <div class="prog-num" aria-hidden="true">01</div>
+            <div class="prog-icon" aria-hidden="true">
+              <svg viewBox="0 0 52 52" fill="none">
+                <rect x="8" y="14" width="36" height="28" rx="4" stroke="rgba(255,255,255,.3)" stroke-width="1.8"/>
+                <path d="M18 14v-4a2 2 0 012-2h12a2 2 0 012 2v4" stroke="rgba(255,255,255,.3)" stroke-width="1.8"/>
+                <path d="M26 28v8M22 32l4 4 4-4" stroke="#E11D2E" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <h3>Industrial Training</h3>
+            <p>6‑month intensive program — live client projects under expert mentorship. The closest thing to a real job before you have one.</p>
+            <ul class="prog-list">
+              <li>Live project exposure</li>
+              <li>Industry mentorship</li>
+              <li>Verified certificate</li>
+            </ul>
+            <a href="#register" class="prog-btn">Apply Now →</a>
+          </article>
+
+          <article class="program-card program-card--hero reveal-up" style="--rd:.1s">
+            <div class="prog-num" aria-hidden="true">02</div>
+            <div class="prog-hero-badge">Most Popular</div>
+            <div class="prog-icon" aria-hidden="true">
+              <svg viewBox="0 0 52 52" fill="none">
+                <circle cx="26" cy="22" r="9" stroke="rgba(255,255,255,.3)" stroke-width="1.8"/>
+                <path d="M12 44c0-7.7 6.3-14 14-14s14 6.3 14 14" stroke="rgba(255,255,255,.3)" stroke-width="1.8" stroke-linecap="round"/>
+                <path d="M38 14l4 4-4 4" stroke="#E11D2E" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <h3>Internship Programs</h3>
+            <p>Paid internship placements at partner companies across Guwahati and remote positions — earn while mastering your craft.</p>
+            <ul class="prog-list">
+              <li>Paid internship roles</li>
+              <li>Real client deliverables</li>
+              <li>Pre‑placement offers</li>
+            </ul>
+            <a href="#register" class="prog-btn">Apply Now →</a>
+          </article>
+
+          <article class="program-card reveal-up" style="--rd:.2s">
+            <div class="prog-num" aria-hidden="true">03</div>
+            <div class="prog-icon" aria-hidden="true">
+              <svg viewBox="0 0 52 52" fill="none">
+                <rect x="8" y="10" width="36" height="32" rx="4" stroke="rgba(255,255,255,.3)" stroke-width="1.8"/>
+                <path d="M18 22h16M18 30h10" stroke="rgba(255,255,255,.3)" stroke-width="1.8" stroke-linecap="round"/>
+                <circle cx="36" cy="34" r="6" fill="#0a0a0a" stroke="#E11D2E" stroke-width="1.8"/>
+                <path d="M34 34l1.3 1.3L38 32" stroke="#E11D2E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <h3>Corporate Training</h3>
+            <p>Custom upskilling programs for organisations. Train your team on the latest stacks, tools and methodologies — on-site or remote.</p>
+            <ul class="prog-list">
+              <li>Custom curriculum</li>
+              <li>On-site & remote delivery</li>
+              <li>Team certifications</li>
+            </ul>
+            <a href="#register" class="prog-btn">Get a Quote →</a>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════
+         ALUMNI / TESTIMONIALS
+    ═══════════════════════════════════════ -->
+    <section class="section alumni-section" id="alumni" aria-labelledby="alumni-heading">
+      <div class="container">
+
+        <header class="section-header reveal-fade">
+          <p class="section-eyebrow">Alumni Stories</p>
+          <h2 id="alumni-heading">Student <span class="text-red">Success Stories</span></h2>
+          <p class="section-sub">Real outcomes. Real people. Real careers.</p>
+        </header>
+
+        <div class="slider-wrap" role="region" aria-label="Student testimonials slider">
+          <div class="slider-viewport">
+            <div class="slider-track" id="slider-track">
+
+              <div class="slide" role="group" aria-label="Testimonial 1 of 4">
+                <div class="slide-inner">
+                  <div class="slide-avatar">
+                    <div class="av-circle av-red"><span aria-hidden="true">PP</span></div>
+                  </div>
+                  <div class="slide-body">
+                    <div class="slide-stars" aria-label="5 out of 5 stars">★★★★★</div>
+                    <blockquote class="slide-quote">"LUITECH's course completely transformed how I think about software. Within 3 months of completing, I landed a role at a Bangalore startup at 7 LPA. The project-based approach made my portfolio stand out."</blockquote>
+                    <cite class="slide-cite">
+                      <strong>Pradyut Paul</strong>
+                      <span>Nokia</span>
+                    </cite>
+                  </div>
+                </div>
+              </div>
+
+              <div class="slide" role="group" aria-label="Testimonial 2 of 4">
+                <div class="slide-inner">
+                  <div class="slide-avatar">
+                    <div class="av-circle av-blue"><span aria-hidden="true">JG</span></div>
+                  </div>
+                  <div class="slide-body">
+                    <div class="slide-stars" aria-label="5 out of 5 stars">★★★★★</div>
+                    <blockquote class="slide-quote">"The Data Science curriculum is genuinely world-class. Every week we were working on real datasets and the mentors had real industry experience — not just textbook knowledge. I joined CIPL within two months."</blockquote>
+                    <cite class="slide-cite">
+                      <strong>Jyoti Prasad Goswami</strong>
+                      <span> CIPL </span>
+                    </cite>
+                  </div>
+                </div>
+              </div>
+
+              <!-- <div class="slide" role="group" aria-label="Testimonial 3 of 4">
+                <div class="slide-inner">
+                  <div class="slide-avatar">
+                    <div class="av-circle av-green"><span aria-hidden="true">AK</span></div>
+                  </div>
+                  <div class="slide-body">
+                    <div class="slide-stars" aria-label="5 out of 5 stars">★★★★★</div>
+                    <blockquote class="slide-quote">"I came in with zero coding experience. LUITECH's small batch size meant I never felt lost — every doubt was answered. Today I run my own freelance business building websites. Best decision of my life."</blockquote>
+                    <cite class="slide-cite">
+                      <strong>Ankit Kalita</strong>
+                      <span>Freelance Frontend Developer</span>
+                    </cite>
+                  </div>
+                </div>
+              </div> -->
+
+              <div class="slide" role="group" aria-label="Testimonial 4 of 4">
+                <div class="slide-inner">
+                  <div class="slide-avatar">
+                    <div class="av-circle av-amber"><span aria-hidden="true">DD</span></div>
+                  </div>
+                  <div class="slide-body">
+                    <div class="slide-stars" aria-label="5 out of 5 stars">★★★★★</div>
+                    <blockquote class="slide-quote">"The UI/UX program was intensely practical — by month two I had a portfolio of five real projects. Now I'm designing for millions of users daily at Zoho. LUITECH gave me both the skills and the confidence."</blockquote>
+                    <cite class="slide-cite">
+                      <strong>Debojit Das</strong>
+                      <span> Jio </span>
+                    </cite>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <div class="slider-nav" aria-label="Slider controls">
+            <button class="sl-btn sl-prev" id="sl-prev" aria-label="Previous slide">
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M11 4L6 9l5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <div class="sl-dots" id="sl-dots" role="tablist" aria-label="Slide indicators"></div>
+            <button class="sl-btn sl-next" id="sl-next" aria-label="Next slide">
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M7 4l5 5-5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════
+         GALLERY
+    ═══════════════════════════════════════ -->
+    <section class="section gallery-section" id="gallery" aria-labelledby="gallery-heading">
+      <div class="container">
+
+        <header class="section-header reveal-fade">
+          <p class="section-eyebrow">Campus Life</p>
+          <h2 id="gallery-heading">Life at <span class="text-red">LUITECH</span></h2>
+          <p class="section-sub">A glimpse into our learning environment and community</p>
+        </header>
+
+        <div class="gallery-grid">
+
+  <div class="gallery-cell gallery-cell--wide reveal-up" tabindex="0">
+    <img src="images/classroom.jpeg" alt="Students in classroom session at LUITECH" class="gallery-img">
+    <div class="gallery-overlay"><span>Classroom Sessions</span></div>
+  </div>
+
+  <div class="gallery-cell reveal-up" tabindex="0">
+    <img src="images/codelab.jpeg" alt="LUITECH coding lab" class="gallery-img">
+    <div class="gallery-overlay"><span>Coding Lab</span></div>
+  </div>
+
+  <div class="gallery-cell reveal-up" tabindex="0">
+    <img src="images/workshop.jpeg" alt="Tech workshop event" class="gallery-img">
+    <div class="gallery-overlay"><span>Workshops</span></div>
+  </div>
+
+  <div class="gallery-cell reveal-up" tabindex="0">
+    <img src="images/datascience.jpeg" alt="Graduation ceremony" class="gallery-img">
+    <div class="gallery-overlay"><span>Graduation</span></div>
+  </div>
+
+  <div class="gallery-cell gallery-cell--wide reveal-up" tabindex="0">
+    <img src="images/placement.jpeg" alt="Placement drive event" class="gallery-img">
+    <div class="gallery-overlay"><span>Placement Drives</span></div>
+  </div>
+
+  <div class="gallery-cell reveal-up" tabindex="0">
+    <img src="images/hackathon.jpeg" alt="Hackathon at LUITECH" class="gallery-img">
+    <div class="gallery-overlay"><span>Hackathons</span></div>
+  </div>
+
+</div>
+
+        <div class="gallery-footer reveal-fade">
+          <a href="gallery.html" class="btn-outline-dark">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><rect x="2" y="2" width="5" height="5" rx="1" stroke="currentColor" stroke-width="1.4"/><rect x="9" y="2" width="5" height="5" rx="1" stroke="currentColor" stroke-width="1.4"/><rect x="2" y="9" width="5" height="5" rx="1" stroke="currentColor" stroke-width="1.4"/><rect x="9" y="9" width="5" height="5" rx="1" stroke="currentColor" stroke-width="1.4"/></svg>
+            View Full Gallery
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════
+         REVIEWS
+    ═══════════════════════════════════════ -->
+    <section class="section reviews-section" id="reviews" aria-labelledby="reviews-heading">
+      <div class="container">
+
+        <header class="section-header reveal-fade">
+          <p class="section-eyebrow">Reviews</p>
+          <h2 id="reviews-heading">What Students <span class="text-red">Say</span></h2>
+          <p class="section-sub">Unfiltered feedback from our community of 1000+ graduates</p>
+        </header>
+
+        <div class="reviews-grid">
+          <div class="review-card reveal-up" style="--rd:0s">
+            <div class="review-head">
+              <div class="review-av rv-a">PD</div>
+              <div>
+                <strong>Pratul Das</strong>
+                <span class="review-course-tag">Python Programming</span>
+              </div>
+            </div>
+            <div class="review-rating" aria-label="5 out of 5">★★★★★</div>
+            <p>"Best investment I've ever made. The Python course was thorough and the trainer was always available outside class hours. Got placed within 6 weeks of completion."</p>
+          </div>
+          <div class="review-card reveal-up" style="--rd:.1s">
+            <div class="review-head">
+              <div class="review-av rv-b">MA</div>
+              <div>
+                <strong>Mirazudin Ahmed</strong>
+                <span class="review-course-tag">Full Stack Dev</span>
+              </div>
+            </div>
+            <div class="review-rating" aria-label="5 out of 5">★★★★★</div>
+            <p>"The placement support is real, not just a promise. Resume workshops, mock interviews, referrals — they delivered on every front. My first offer came two months after graduating."</p>
+          </div>
+          <div class="review-card reveal-up" style="--rd:.2s">
+            <div class="review-head">
+              <div class="review-av rv-c">DJ</div>
+              <div>
+                <strong>Deep Jyoti Rabha</strong>
+                <span class="review-course-tag">UI/UX Design</span>
+              </div>
+            </div>
+            <div class="review-rating" aria-label="5 out of 5">★★★★★</div>
+            <p>"Coming from a non-tech background, I was nervous. The curriculum is so well structured that I never felt overwhelmed. I now design for a product startup in Bangalore."</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════
+         BLOG
+    ═══════════════════════════════════════ -->
+    <section class="section blog-section" id="blog" aria-labelledby="blog-heading">
+      <div class="container">
+
+        <header class="section-header reveal-fade">
+          <p class="section-eyebrow">Knowledge Hub</p>
+          <h2 id="blog-heading">Latest <span class="text-red">Articles</span></h2>
+          <p class="section-sub">Insights, guides and career advice from our trainers</p>
+        </header>
+
+        <div class="blog-grid">
+
+          <article class="blog-card reveal-up" style="--rd:0s">
+            <div class="blog-thumb bt-1" aria-hidden="true">
+              <span class="blog-cat-pill">Career</span>
+            </div>
+            <div class="blog-body">
+              <time class="blog-date" datetime="2025-03-01">Mar 1, 2025</time>
+              <h3>Top 10 IT Skills Employers in Assam Are Hiring For in 2025</h3>
+              <p>The job market in Northeast India is evolving fast. Here are the skills companies are actively hunting for this year.</p>
+              <a href="#blog" class="blog-read-more">Read Article <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></a>
+            </div>
+          </article>
+
+          <article class="blog-card reveal-up" style="--rd:.1s">
+            <div class="blog-thumb bt-2" aria-hidden="true">
+              <span class="blog-cat-pill">Tech</span>
+            </div>
+            <div class="blog-body">
+              <time class="blog-date" datetime="2025-02-18">Feb 18, 2025</time>
+              <h3>Why Every Developer Should Learn Python in 2025</h3>
+              <p>From web scraping to AI, Python's versatility makes it the single most valuable language to add to your toolkit.</p>
+              <a href="#blog" class="blog-read-more">Read Article <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></a>
+            </div>
+          </article>
+
+          <article class="blog-card reveal-up" style="--rd:.2s">
+            <div class="blog-thumb bt-3" aria-hidden="true">
+              <span class="blog-cat-pill">Design</span>
+            </div>
+            <div class="blog-body">
+              <time class="blog-date" datetime="2025-02-05">Feb 5, 2025</time>
+              <h3>Breaking Into UI/UX Design With No Prior Experience</h3>
+              <p>A practical guide to building your first portfolio and landing your first design role — degree not required.</p>
+              <a href="#blog" class="blog-read-more">Read Article <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></a>
+            </div>
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════
+         CTA
+    ═══════════════════════════════════════ -->
+    <section class="cta-section" id="register" aria-labelledby="cta-heading">
+      <div class="cta-canvas" aria-hidden="true">
+        <div class="cta-orb cta-orb-1"></div>
+        <div class="cta-orb cta-orb-2"></div>
+        <div class="cta-grid-lines"></div>
+      </div>
+      <div class="container">
+        <div class="cta-inner reveal-fade">
+          <p class="section-eyebrow" style="color:rgba(255,255,255,.4);border-color:rgba(255,255,255,.12)">Limited Seats Available</p>
+          <h2 id="cta-heading" class="cta-headline">
+            Start Your Career<br>With <span class="cta-red">LUITECH</span> Today
+          </h2>
+          <p class="cta-sub">Join 1000+ students who have built real tech careers through practical, industry-focused training.</p>
+          <div class="cta-btns">
+            <a href="contact.html" class="btn-cta-primary">
+              <span>Register Now</span>
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+            </a>
+            <!-- <a href="#contact" class="btn-cta-ghost">Talk to a Counselor</a> -->
+             <a href="https://wa.me/919399019999" class="btn-cta-ghost" target="_blank" rel="noopener noreferrer">Talk to a Counselor</a>
+          </div>
+          <p class="cta-fine">No prior experience required · Certificate on completion · Placement support included</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ═══════════════════════════════════════
+       FOOTER
+  ═══════════════════════════════════════ -->
+  <footer class="footer" id="contact" role="contentinfo">
+    <div class="container">
+
+      <div class="footer-top">
+
+        <div class="footer-col footer-about-col">
+          <div class="logo footer-logo" aria-label="LUITECH Solutions">
+           <div class="logo-icon" aria-hidden="true">
+            <img src="logo.jpg" alt="LUITECH Logo" width="32" height="32">
+           </div>
+
+            <div class="logo-wordmark">
+              <span class="logo-name" style="color:rgba(255,255,255,.85)">LUITECH</span>
+             
+            </div>
+          </div>
+          <p class="footer-desc">Professional IT Training Institute in Guwahati, Assam. Empowering students with industry-ready tech skills since 2015.</p>
+          <div class="social-row" aria-label="Social media">
+            <a href="#" class="social-btn" aria-label="Follow on Facebook">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+            </a>
+            <a href="#" class="social-btn" aria-label="Follow on Instagram">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><circle cx="17.5" cy="6.5" r=".5" fill="currentColor"/></svg>
+            </a>
+            <a href="#" class="social-btn" aria-label="Follow on LinkedIn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+            </a>
+            <a href="#" class="social-btn" aria-label="Subscribe on YouTube">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M22.54 6.42a2.78 2.78 0 00-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 00-1.95 1.96A29 29 0 001 12a29 29 0 00.46 5.58A2.78 2.78 0 003.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.4a2.78 2.78 0 001.95-1.96A29 29 0 0023 12a29 29 0 00-.46-5.58zM9.75 15.02V8.98L15.5 12l-5.75 3.02z"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul class="footer-list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="courses.html">Courses</a></li>
+            <li><a href="training.html">Training Programs</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="alumni.html">Alumni</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="review.html">Review</a></li>
+            <li><a href="ragister.html">Register</a></li>
+          </ul>
+        </div>
+
+       <div class="footer-col">
+          <h4>Course Categories</h4>
+          <ul class="footer-list">
+            <li><a href="#cat-redhat">RedHat Courses</a></li>
+            <li><a href="#cat-cloud">Cloud Computing</a></li>
+            <li><a href="#cat-devops">DevOps</a></li>
+            <li><a href="#cat-datascience">Data Science &amp; AI</a></li>
+            <li><a href="#cat-azure">Azure / Cloud Infra</a></li>
+            <li><a href="#cat-networking">Networking &amp; SysAdmin</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col footer-contact-col">
+          <h4>Contact</h4>
+          <address class="footer-address">
+            <div class="fc-item">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              <span>1st Floor, Ward No-21, Pragati Building,<br>Pragati Nagar Path, Banik Para,<br>Lal Ganesh, Guwahati,<br>Kamrup Metro, Assam 781034</span>
+            </div>
+            <div class="fc-item">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              <a href="mailto:luitechsolutions@gmail.com">luitechsolutions@gmail.com</a>
+            </div>
+          </address>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <p>© <span id="copy-year"></span> LUITECH. All rights reserved.</p>
+        <p class="footer-credit">Designed with precision · Guwahati, Assam</p>
+      </div>
+
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Contact LUITECH Solutions — IT Training Institute in Guwahati, Assam. Reach us at luitechsolutions@gmail.com or visit our centre. ISO 9001:2015 Certified.">
+  <meta name="keywords" content="contact LUITECH Solutions, IT training Guwahati contact, luitechsolutions@gmail.com, Lal Ganesh Guwahati, Assam IT training enquiry">
+  <meta name="author" content="LUITECH Solutions">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="Contact LUITECH Solutions — Guwahati IT Training Institute">
+  <meta property="og:description" content="Get in touch with LUITECH Solutions. Visit our Guwahati centre, email us, or fill our contact form. ISO 9001:2015 &amp; DPIIT Certified.">
+  <meta property="og:type" content="website">
+  <title>Contact Us — LUITECH Solutions | IT Training Guwahati, Assam</title>
+  <link rel="icon" type="image/png" href="logo.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Clash+Display:wght@400;500;600;700&family=Bricolage+Grotesque:opsz,wght@12..96,300;12..96,400;12..96,500;12..96,600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* ─── PAGE HERO ─── */
+    .page-hero{
+      background:#060606;padding:160px 0 100px;
+      position:relative;overflow:hidden;text-align:center
+    }
+    .page-hero-bg{position:absolute;inset:0;pointer-events:none}
+    .page-orb{position:absolute;border-radius:50%;filter:blur(120px)}
+    .page-orb-1{width:600px;height:600px;top:50%;left:50%;transform:translate(-50%,-50%);
+      background:radial-gradient(circle,rgba(225,29,46,.15),transparent 70%)}
+    .page-orb-2{width:300px;height:300px;top:-10%;right:10%;
+      background:radial-gradient(circle,rgba(225,29,46,.08),transparent 70%)}
+    .page-grid-lines{
+      position:absolute;inset:0;
+      background-image:linear-gradient(rgba(255,255,255,.02) 1px,transparent 1px),
+        linear-gradient(90deg,rgba(255,255,255,.02) 1px,transparent 1px);
+      background-size:60px 60px;
+      mask-image:radial-gradient(ellipse 70% 70% at 50% 50%,black,transparent)
+    }
+    .page-hero-inner{position:relative;z-index:2}
+    .page-hero h1{color:#fff;margin:.75rem 0 1.25rem}
+    .page-hero p{color:rgba(255,255,255,.45);font-size:1.15rem;max-width:560px;margin:0 auto}
+
+    /* ─── CONTACT LAYOUT ─── */
+    .contact-layout{display:grid;grid-template-columns:1fr 1.2fr;gap:4rem;align-items:start}
+
+    /* ─── CONTACT INFO ─── */
+    .contact-info-block{margin-bottom:2.5rem}
+    .contact-info-block h3{font-size:1.1rem;margin-bottom:1.25rem;padding-bottom:.75rem;border-bottom:1px solid var(--border)}
+    .contact-detail-item{
+      display:flex;gap:.9rem;align-items:flex-start;
+      padding:1.25rem;background:var(--white);border:1px solid var(--border);
+      border-radius:var(--r);margin-bottom:.75rem;
+      transition:border-color .25s,box-shadow .25s
+    }
+    .contact-detail-item:hover{border-color:rgba(225,29,46,.2);box-shadow:var(--shadow-sm)}
+    .cd-icon{
+      width:38px;height:38px;border-radius:10px;
+      background:var(--red-alpha);border:1px solid rgba(225,29,46,.2);
+      display:flex;align-items:center;justify-content:center;flex-shrink:0
+    }
+    .cd-icon svg{color:var(--red)}
+    .cd-label{font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;
+      color:var(--text-ghost);margin-bottom:.2rem}
+    .cd-value{font-size:.9rem;font-weight:500;color:var(--black);line-height:1.6}
+    .cd-value a{color:var(--red);transition:opacity .2s}
+    .cd-value a:hover{opacity:.75}
+
+    /* Cert Block in Contact */
+    .contact-cert-grid{display:grid;grid-template-columns:1fr 1fr;gap:.75rem;margin-top:1.25rem}
+    .contact-cert-chip{
+      display:flex;gap:.6rem;align-items:center;
+      background:var(--black);border:1px solid rgba(225,29,46,.15);
+      border-radius:var(--r);padding:1rem;
+    }
+    .ccc-icon{
+      width:28px;height:28px;border-radius:7px;
+      background:var(--red-alpha);border:1px solid rgba(225,29,46,.2);
+      display:flex;align-items:center;justify-content:center;flex-shrink:0
+    }
+    .ccc-icon svg{color:var(--red)}
+    .ccc-text strong{display:block;font-size:.78rem;color:rgba(255,255,255,.7)}
+    .ccc-text span{font-size:.68rem;color:rgba(255,255,255,.3)}
+
+    /* ─── CONTACT FORM ─── */
+    .form-card{
+      background:var(--white);border:1px solid var(--border);
+      border-radius:var(--r-lg);padding:2.5rem;
+      box-shadow:var(--shadow-sm)
+    }
+    .form-card h2{font-size:1.5rem;margin-bottom:.5rem}
+    .form-card > p{font-size:.9rem;margin-bottom:2rem}
+    .form-group{margin-bottom:1.25rem}
+    .form-row{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem}
+    .form-group label{
+      display:block;font-size:.78rem;font-weight:600;letter-spacing:.04em;
+      text-transform:uppercase;color:var(--text-muted);margin-bottom:.45rem
+    }
+    .form-group input,.form-group textarea,.form-group select{
+      width:100%;padding:.825rem 1rem;
+      border:1.5px solid var(--border);border-radius:var(--r);
+      font-family:inherit;font-size:.9rem;color:var(--black);
+      background:var(--white);
+      transition:border-color .2s,box-shadow .2s;outline:none
+    }
+    .form-group input:focus,.form-group textarea:focus,.form-group select:focus{
+      border-color:var(--red);box-shadow:0 0 0 3px var(--red-alpha)
+    }
+    .form-group input.error,.form-group textarea.error{
+      border-color:#e11d2e;box-shadow:0 0 0 3px rgba(225,29,46,.12)
+    }
+    .form-error-msg{
+      font-size:.74rem;color:var(--red);margin-top:.3rem;display:none
+    }
+    .form-group textarea{resize:vertical;min-height:130px}
+    .form-submit{
+      display:flex;align-items:center;gap:.75rem;
+      margin-top:1.75rem
+    }
+    .btn-submit{
+      display:inline-flex;align-items:center;gap:.5rem;
+      background:var(--red);color:#fff;
+      padding:1rem 2rem;border-radius:50px;
+      font-size:.95rem;font-weight:700;border:none;
+      transition:background .2s,transform .25s var(--ease-spring),box-shadow .2s;
+      cursor:pointer
+    }
+    .btn-submit:hover{background:var(--red-dark);transform:translateY(-2px);box-shadow:0 8px 28px rgba(225,29,46,.35)}
+    .btn-submit:disabled{opacity:.5;cursor:not-allowed;transform:none}
+    .form-note{font-size:.78rem;color:var(--text-ghost)}
+
+    /* Success State */
+    .form-success{
+      display:none;text-align:center;padding:3rem 2rem;
+    }
+    .form-success.show{display:block}
+    .success-icon{
+      width:64px;height:64px;border-radius:50%;
+      background:rgba(16,185,129,.12);border:2px solid rgba(16,185,129,.3);
+      display:flex;align-items:center;justify-content:center;
+      margin:0 auto 1.5rem
+    }
+    .success-icon svg{color:#10b981}
+    .form-success h3{font-size:1.25rem;margin-bottom:.5rem}
+
+    /* ─── MAP ─── */
+    .map-wrap{
+      border-radius:var(--r-lg);overflow:hidden;
+      border:1px solid var(--border);height:420px;
+      margin-top:5rem
+    }
+    .map-wrap iframe{width:100%;height:100%;border:none;display:block}
+
+    /* ─── RESPONSIVE ─── */
+    @media(max-width:1024px){
+      .contact-layout{grid-template-columns:1fr;gap:3rem}
+    }
+    @media(max-width:768px){
+      .page-hero{padding:120px 0 80px}
+      .form-row{grid-template-columns:1fr}
+      .contact-cert-grid{grid-template-columns:1fr}
+      .map-wrap{height:300px}
+    }
+  </style>
+</head>
+<body>
+
+  <div class="noise-overlay" aria-hidden="true"></div>
+  <div class="cursor" id="cursor" aria-hidden="true"></div>
+  <div class="cursor-dot" id="cursor-dot" aria-hidden="true"></div>
+
+   <!-- ═══════════════════════════════════════
+       WhatsApp Button
+  ═══════════════════════════════════════ -->
+  <a href="https://wa.me/91999999999?text=Hello%20LUITECH%20Solutions%2C%20I%20want%20to%20know%20about%20your%20courses"
+   class="whatsapp-float"
+   target="_blank"
+   aria-label="Chat on WhatsApp">
+
+   <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp Chat">
+
+  </a>
+
+  <!-- NAVBAR -->
+  <header class="navbar solid" id="navbar" role="banner">
+    <div class="nav-inner">
+      <a href="index.html" class="logo" aria-label="LUITECH Solutions — Home">
+        <div class="logo-icon" aria-hidden="true">
+          <img src="logo1.png" alt="LUITECH Logo" width="150" height="100">
+        </div>
+      </a>
+      <nav class="nav-menu" id="nav-menu" role="navigation" aria-label="Primary navigation">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="courses.html" class="nav-link">Courses</a>
+        <a href="training.html" class="nav-link">Training</a>
+        <a href="gallery.html" class="nav-link">Gallery</a>
+        <a href="alumni.html" class="nav-link">Alumni</a>
+        <a href="blog.html" class="nav-link">Blog</a>
+        <a href="review.html" class="nav-link">Reviews</a>
+        <a href="contact.html" class="nav-link" style="color:var(--red)">Contact</a>
+        <a href="contact.html#register" class="nav-link nav-register">Register</a>
+      </nav>
+      <button class="burger" id="burger" aria-label="Open navigation" aria-expanded="false" aria-controls="mobile-nav">
+        <span class="burger-bar"></span>
+        <span class="burger-bar"></span>
+        <span class="burger-bar"></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- MOBILE DRAWER -->
+  <div class="mobile-drawer" id="mobile-nav" role="dialog" aria-modal="true" aria-label="Navigation menu" aria-hidden="true">
+    <div class="drawer-backdrop" id="drawer-backdrop"></div>
+    <nav class="drawer-panel" role="navigation">
+      <div class="drawer-links">
+        <p>...</p>
+        <a href="index.html" class="drawer-link">Home</a>
+        <a href="about.html" class="drawer-link">About</a>
+        <a href="courses.html" class="drawer-link">Courses</a>
+        <a href="training.html" class="drawer-link">Training</a>
+        <a href="gallery.html" class="drawer-link">Gallery</a>
+        <a href="alumni.html" class="drawer-link">Alumni</a>
+        <a href="blog.html" class="drawer-link">Blog</a>
+        <a href="review.html" class="drawer-link">Reviews</a>
+        <a href="contact.html" class="drawer-link">Contact</a>
+        <a href="contact.html#register" class="drawer-link drawer-register">Register Now →</a>
+      </div>
+    </nav>
+  </div>
+
+  <main>
+
+    <!-- PAGE HERO -->
+    <section class="page-hero" aria-labelledby="contact-h1">
+      <div class="page-hero-bg">
+        <div class="page-orb page-orb-1"></div>
+        <div class="page-orb page-orb-2"></div>
+        <div class="page-grid-lines"></div>
+      </div>
+      <div class="container page-hero-inner">
+        <p class="section-eyebrow fade-up" style="--d:0s;color:rgba(255,255,255,.4);border-color:rgba(255,255,255,.12)">Get In Touch</p>
+        <h1 class="fade-up" style="--d:.1s" id="contact-h1">Contact LUITECH Solutions</h1>
+        <p class="fade-up" style="--d:.22s">Have questions about our programs? We're here to help you find the right course and career path.</p>
+      </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section class="section" id="contact-details" aria-labelledby="contact-section-heading">
+      <div class="container">
+        <h2 class="sr-only" id="contact-section-heading">Contact Information and Form</h2>
+
+        <div class="contact-layout">
+
+          <!-- LEFT — Contact Info -->
+          <div class="reveal-fade">
+
+            <div class="contact-info-block">
+              <h3>Contact Details</h3>
+              <div class="contact-detail-item">
+                <div class="cd-icon" aria-hidden="true">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                </div>
+                <div>
+                  <div class="cd-label">Address</div>
+                  <div class="cd-value">
+                    LUITECH SOLUTIONS<br>
+                    1st Floor, Ward No-21, Pragati Building,<br>
+                    Pragati Nagar Path, Banik Para,<br>
+                    Lal Ganesh, Guwahati, Assam 781034
+                  </div>
+                </div>
+              </div>
+              <div class="contact-detail-item">
+                <div class="cd-icon" aria-hidden="true">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                </div>
+                <div>
+                  <div class="cd-label">Email</div>
+                  <div class="cd-value">
+                    <a href="mailto:luitechsolutions@gmail.com">luitechsolutions@gmail.com</a>
+                  </div>
+                </div>
+              </div>
+              <div class="contact-detail-item">
+                <div class="cd-icon" aria-hidden="true">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M12 18h.01"/></svg>
+                </div>
+                <div>
+                  <div class="cd-label">Hours</div>
+                  <div class="cd-value">Monday – Saturday: 9:00 AM – 7:00 PM<br>Sunday: Closed</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Certifications Reminder -->
+            <div>
+              <h3 style="font-size:1.1rem;margin-bottom:1.25rem;padding-bottom:.75rem;border-bottom:1px solid var(--border)">Our Certifications</h3>
+              <div class="contact-cert-grid">
+                <div class="contact-cert-chip">
+                  <div class="ccc-icon"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1.5l1.4 4.2H13L9.3 8.1l1.4 4.2L7 9.8l-3.7 2.5 1.4-4.2L1 5.7h4.6L7 1.5z" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"/></svg></div>
+                  <div class="ccc-text"><strong>ISO 9001:2015</strong><span>Certified Organisation</span></div>
+                </div>
+                <div class="contact-cert-chip">
+                  <div class="ccc-icon"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="5.5" stroke="currentColor" stroke-width="1.4"/><path d="M4.5 7l2 2 3.5-3.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+                  <div class="ccc-text"><strong>DPIIT – Startup India</strong><span>Government Recognised</span></div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- RIGHT — Contact Form -->
+          <div class="reveal-up" id="register">
+            <div class="form-card">
+              <h2>Send Us a Message</h2>
+              <p>Fill in the form below and our team will get back to you within one business day.</p>
+
+              <!-- Success Message -->
+              <div class="form-success" id="form-success" role="alert" aria-live="polite">
+                <div class="success-icon" aria-hidden="true">
+                  <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><path d="M5 14l6 6 12-12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </div>
+                <h3>Message Sent!</h3>
+                <p>Thank you for reaching out. Our counseling team will contact you within one business day.</p>
+              </div>
+
+              <!-- Form -->
+              <form id="contact-form" novalidate aria-label="Contact enquiry form">
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="name">Full Name <span style="color:var(--red)">*</span></label>
+                    <input type="text" id="name" name="name" placeholder="Your full name" autocomplete="name" required aria-required="true">
+                    <p class="form-error-msg" id="name-error" role="alert">Please enter your full name.</p>
+                  </div>
+                  <div class="form-group">
+                    <label for="email">Email Address <span style="color:var(--red)">*</span></label>
+                    <input type="email" id="email" name="email" placeholder="you@email.com" autocomplete="email" required aria-required="true">
+                    <p class="form-error-msg" id="email-error" role="alert">Please enter a valid email address.</p>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="phone">Phone Number <span style="color:var(--red)">*</span></label>
+                  <input type="tel" id="phone" name="phone" placeholder="+91 98765 43210" autocomplete="tel" required aria-required="true">
+                  <p class="form-error-msg" id="phone-error" role="alert">Please enter a valid phone number.</p>
+                </div>
+                <div class="form-group">
+                  <label for="course">Interested Course</label>
+                  <select id="course" name="course">
+                    <option value="">Select a course (optional)</option>
+                    <option>Full Stack Development</option>
+                    <option>Python Programming</option>
+                    <option>Data Science &amp; AI</option>
+                    <option>DevOps &amp; Cloud</option>
+                    <option>RedHat Linux (RHCSA/RHCE)</option>
+                    <option>AWS / Azure Cloud</option>
+                    <option>UI/UX Design</option>
+                    <option>Web Development</option>
+                    <option>Corporate Training</option>
+                    <option>Other</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="message">Message <span style="color:var(--red)">*</span></label>
+                  <textarea id="message" name="message" placeholder="Tell us about your background and what you're looking to achieve..." required aria-required="true"></textarea>
+                  <p class="form-error-msg" id="message-error" role="alert">Please enter your message.</p>
+                </div>
+                <div class="form-submit">
+                  <button type="submit" class="btn-submit" id="submit-btn">
+                    <span>Send Message</span>
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2 8h12M10 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+                  </button>
+                  <p class="form-note">We reply within 1 business day</p>
+                </div>
+              </form>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- MAP -->
+        <div class="map-wrap reveal-fade">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3581.697012345678!2d91.7362!3d26.1445!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x375a5907cfe35ec7%3A0x0!2sLal+Ganesh%2C+Guwahati%2C+Assam!5e0!3m2!1sen!2sin!4v1000000000000"
+            title="LUITECH Solutions location on Google Maps — Lal Ganesh, Guwahati, Assam"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            allowfullscreen>
+          </iframe>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section" aria-labelledby="contact-cta-heading">
+      <div class="cta-canvas" aria-hidden="true">
+        <div class="cta-orb cta-orb-1"></div>
+        <div class="cta-orb cta-orb-2"></div>
+        <div class="cta-grid-lines"></div>
+      </div>
+      <div class="container">
+        <div class="cta-inner reveal-fade">
+          <p class="section-eyebrow" style="color:rgba(255,255,255,.4);border-color:rgba(255,255,255,.12)">ISO 9001:2015 · DPIIT Startup India Certified</p>
+          <h2 id="contact-cta-heading" class="cta-headline">
+            Ready to Start?<br>Join <span class="cta-red">LUITECH</span> Today.
+          </h2>
+          <p class="cta-sub">Talk to our expert counselors and find the right program for your career goals.</p>
+          <div class="cta-btns">
+            <a href="mailto:luitechsolutions@gmail.com" class="btn-cta-primary">
+              <span>Email Us</span>
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+            </a>
+            <a href="#contact-details" class="btn-cta-ghost">View Our Details</a>
+          </div>
+          <p class="cta-fine">No prior experience required · Certificate on completion · Placement support included</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-col footer-about-col">
+          <div class="logo footer-logo" aria-label="LUITECH Solutions">
+            <div class="logo-icon" aria-hidden="true">
+              <img src="logo.jpg" alt="LUITECH Logo" width="32" height="32">
+            </div>
+            <div class="logo-wordmark">
+              <span class="logo-name" style="color:rgba(255,255,255,.85)">LUITECH</span>
+            </div>
+          </div>
+          <p class="footer-desc">Professional IT Training Institute in Guwahati, Assam. Empowering students with industry-ready tech skills.</p>
+          <div class="social-row" aria-label="Social media">
+            <a href="#" class="social-btn" aria-label="Follow on Facebook"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
+            <a href="#" class="social-btn" aria-label="Follow on Instagram"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><circle cx="17.5" cy="6.5" r=".5" fill="currentColor"/></svg></a>
+            <a href="#" class="social-btn" aria-label="Follow on LinkedIn"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg></a>
+            <a href="#" class="social-btn" aria-label="Subscribe on YouTube"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M22.54 6.42a2.78 2.78 0 00-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 00-1.95 1.96A29 29 0 001 12a29 29 0 00.46 5.58A2.78 2.78 0 003.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.4a2.78 2.78 0 001.95-1.96A29 29 0 0023 12a29 29 0 00-.46-5.58zM9.75 15.02V8.98L15.5 12l-5.75 3.02z"/></svg></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul class="footer-list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="courses.html">Courses</a></li>
+            <li><a href="training.html">Training Programs</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="alumni.html">Alumni</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="review.html">Reviews</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Course Categories</h4>
+          <ul class="footer-list">
+            <li><a href="courses.html">RedHat Courses</a></li>
+            <li><a href="courses.html">Cloud Computing</a></li>
+            <li><a href="courses.html">DevOps</a></li>
+            <li><a href="courses.html">Data Science &amp; AI</a></li>
+            <li><a href="courses.html">Azure / Cloud Infra</a></li>
+            <li><a href="courses.html">Networking &amp; SysAdmin</a></li>
+          </ul>
+        </div>
+        <div class="footer-col footer-contact-col">
+          <h4>Contact</h4>
+          <address class="footer-address">
+            <div class="fc-item">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              <span>1st Floor, Ward No-21, Pragati Building,<br>Pragati Nagar Path, Banik Para,<br>Lal Ganesh, Guwahati, Assam 781034</span>
+            </div>
+            <div class="fc-item">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              <a href="mailto:luitechsolutions@gmail.com">luitechsolutions@gmail.com</a>
+            </div>
+          </address>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© <span id="copy-year"></span> LUITECH Solutions. All rights reserved.</p>
+        <p class="footer-credit">ISO 9001:2015 Certified · DPIIT Startup India Certified</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+  <script>
+    // Contact form validation
+    (function() {
+      const form = document.getElementById('contact-form');
+      const successBox = document.getElementById('form-success');
+      const submitBtn = document.getElementById('submit-btn');
+      if (!form) return;
+
+      function showError(fieldId, errorId, show) {
+        const field = document.getElementById(fieldId);
+        const errEl = document.getElementById(errorId);
+        if (!field || !errEl) return;
+        if (show) {
+          field.classList.add('error');
+          errEl.style.display = 'block';
+          field.setAttribute('aria-invalid','true');
+        } else {
+          field.classList.remove('error');
+          errEl.style.display = 'none';
+          field.setAttribute('aria-invalid','false');
+        }
+      }
+
+      function validateEmail(email) {
+        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+      }
+
+      function validatePhone(phone) {
+        return /^[\d\s\+\-\(\)]{7,}$/.test(phone.trim());
+      }
+
+      form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        let valid = true;
+
+        const name = document.getElementById('name').value.trim();
+        const email = document.getElementById('email').value.trim();
+        const phone = document.getElementById('phone').value.trim();
+        const message = document.getElementById('message').value.trim();
+
+        if (!name || name.length < 2) { showError('name','name-error',true); valid = false; }
+        else { showError('name','name-error',false); }
+
+        if (!validateEmail(email)) { showError('email','email-error',true); valid = false; }
+        else { showError('email','email-error',false); }
+
+        if (!validatePhone(phone)) { showError('phone','phone-error',true); valid = false; }
+        else { showError('phone','phone-error',false); }
+
+        if (!message || message.length < 10) { showError('message','message-error',true); valid = false; }
+        else { showError('message','message-error',false); }
+
+        if (!valid) return;
+
+        // Simulate submission
+        submitBtn.disabled = true;
+        submitBtn.querySelector('span').textContent = 'Sending…';
+
+        setTimeout(() => {
+          form.style.display = 'none';
+          successBox.classList.add('show');
+        }, 1200);
+      });
+
+      // Live validation on blur
+      ['name','email','phone','message'].forEach(id => {
+        const el = document.getElementById(id);
+        if (!el) return;
+        el.addEventListener('blur', function() {
+          if (id === 'name') showError('name','name-error', !this.value.trim() || this.value.trim().length < 2);
+          if (id === 'email') showError('email','email-error', !validateEmail(this.value.trim()));
+          if (id === 'phone') showError('phone','phone-error', !validatePhone(this.value.trim()));
+          if (id === 'message') showError('message','message-error', !this.value.trim() || this.value.trim().length < 10);
+        });
+      });
+    })();
+  </script>
+</body>
+</html>

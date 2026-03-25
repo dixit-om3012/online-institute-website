@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="LUITECH Solutions technology blog — career guides, tutorials and industry insights on cloud computing, Python, DevOps, and IT careers in Guwahati, Assam.">
+  <meta name="keywords" content="IT blog Guwahati, cloud computing career, Python 2025, DevOps roadmap, tech education Assam, LUITECH blog">
+  <meta name="author" content="LUITECH Solutions">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="Technology Blog — LUITECH Solutions">
+  <meta property="og:description" content="Career guides, technology tutorials and industry insights from LUITECH Solutions — Guwahati's premier IT training institute.">
+  <meta property="og:type" content="website">
+  <title>Technology Blog — LUITECH Solutions | IT Career Insights</title>
+  <link rel="icon" type="image/png" href="logo.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Clash+Display:wght@400;500;600;700&family=Bricolage+Grotesque:opsz,wght@12..96,300;12..96,400;12..96,500;12..96,600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* ─── PAGE HERO ─── */
+    .page-hero{
+      background:#060606;padding:160px 0 100px;
+      position:relative;overflow:hidden;text-align:center
+    }
+    .page-hero-bg{position:absolute;inset:0;pointer-events:none}
+    .page-orb{position:absolute;border-radius:50%;filter:blur(120px)}
+    .page-orb-1{width:600px;height:600px;top:50%;left:50%;transform:translate(-50%,-50%);
+      background:radial-gradient(circle,rgba(225,29,46,.15),transparent 70%)}
+    .page-orb-2{width:300px;height:300px;top:-10%;right:10%;
+      background:radial-gradient(circle,rgba(225,29,46,.08),transparent 70%)}
+    .page-grid-lines{
+      position:absolute;inset:0;
+      background-image:linear-gradient(rgba(255,255,255,.02) 1px,transparent 1px),
+        linear-gradient(90deg,rgba(255,255,255,.02) 1px,transparent 1px);
+      background-size:60px 60px;
+      mask-image:radial-gradient(ellipse 70% 70% at 50% 50%,black,transparent)
+    }
+    .page-hero-inner{position:relative;z-index:2}
+    .page-hero h1{color:#fff;margin:.75rem 0 1.25rem}
+    .page-hero p{color:rgba(255,255,255,.45);font-size:1.15rem;max-width:580px;margin:0 auto}
+
+    /* ─── BLOG LAYOUT ─── */
+    .blog-layout{display:grid;grid-template-columns:1fr 320px;gap:3.5rem;align-items:start}
+
+    /* ─── BLOG CERT BANNER ─── */
+    .blog-cert-banner{
+      background:linear-gradient(135deg,var(--black),#1a0608);
+      border-radius:var(--r-lg);padding:2rem;margin-bottom:3rem;
+      display:flex;gap:1.5rem;align-items:center;flex-wrap:wrap;
+      border:1px solid rgba(225,29,46,.15)
+    }
+    .bcb-text{flex:1;min-width:200px}
+    .bcb-text strong{display:block;font-size:.95rem;color:#fff;margin-bottom:.25rem}
+    .bcb-text span{font-size:.82rem;color:rgba(255,255,255,.35)}
+    .bcb-chips{display:flex;gap:.75rem;flex-wrap:wrap}
+    .bcb-chip{
+      font-size:.7rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;
+      background:var(--red-alpha);color:var(--red);
+      border:1px solid rgba(225,29,46,.25);
+      padding:.35rem .9rem;border-radius:50px
+    }
+
+    /* ─── BLOG GRID EXTENDED ─── */
+    .blog-main-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem}
+
+    /* reuse blog-card from style.css */
+    .bt-4{background:linear-gradient(135deg,#0d1a35,#152a5f)}
+    .bt-5{background:linear-gradient(135deg,#10180d,#1c3b14)}
+    .bt-6{background:linear-gradient(135deg,#17050b,#3d0d1c)}
+    .bt-7{background:linear-gradient(135deg,#0a0d18,#1a2040)}
+
+    /* Featured post */
+    .blog-featured{
+      background:var(--white);border:1px solid var(--border);border-radius:var(--r-lg);
+      overflow:hidden;margin-bottom:2rem;
+      transition:transform .4s var(--ease-spring),box-shadow .4s
+    }
+    .blog-featured:hover{transform:translateY(-6px);box-shadow:var(--shadow-lg)}
+    .blog-featured-thumb{
+      height:280px;background:linear-gradient(135deg,#060a1a,#0e1d4a);
+      position:relative;display:flex;align-items:flex-start;padding:1.5rem
+    }
+    .blog-featured-body{padding:2rem}
+    .blog-featured h2{font-size:1.6rem;margin:.5rem 0 1rem;letter-spacing:-.03em}
+    .blog-featured p{margin-bottom:1.5rem}
+
+    /* ─── SIDEBAR ─── */
+    .blog-sidebar{position:sticky;top:calc(var(--nav-h) + 2rem)}
+    .sidebar-widget{
+      background:var(--white);border:1px solid var(--border);
+      border-radius:var(--r-lg);padding:1.75rem;margin-bottom:1.5rem
+    }
+    .sidebar-widget h3{font-size:1rem;margin-bottom:1.25rem;padding-bottom:.75rem;border-bottom:1px solid var(--border)}
+    .sidebar-cert{
+      background:var(--black);border:1px solid rgba(225,29,46,.15)
+    }
+    .sidebar-cert h3{color:rgba(255,255,255,.55);border-color:rgba(255,255,255,.08)}
+    .sc-badge{
+      display:flex;gap:.75rem;align-items:center;
+      padding:.85rem 0;border-bottom:1px solid rgba(255,255,255,.06)
+    }
+    .sc-badge:last-child{border-bottom:none;padding-bottom:0}
+    .sc-icon{
+      width:32px;height:32px;border-radius:8px;
+      background:var(--red-alpha);border:1px solid rgba(225,29,46,.2);
+      display:flex;align-items:center;justify-content:center;flex-shrink:0
+    }
+    .sc-icon svg{color:var(--red)}
+    .sc-badge-text strong{display:block;font-size:.8rem;color:rgba(255,255,255,.7)}
+    .sc-badge-text span{font-size:.72rem;color:rgba(255,255,255,.3)}
+    .sidebar-cats li{padding:.5rem 0;border-bottom:1px solid var(--border)}
+    .sidebar-cats li:last-child{border-bottom:none}
+    .sidebar-cats a{
+      display:flex;justify-content:space-between;align-items:center;
+      font-size:.875rem;transition:color .2s
+    }
+    .sidebar-cats a:hover{color:var(--red)}
+    .cat-count{font-size:.72rem;background:var(--surface);border-radius:50px;
+      padding:.15rem .65rem;color:var(--text-ghost)}
+    .sidebar-popular li{padding:.75rem 0;border-bottom:1px solid var(--border)}
+    .sidebar-popular li:last-child{border-bottom:none;padding-bottom:0}
+    .sidebar-popular a{font-size:.855rem;line-height:1.45;transition:color .2s}
+    .sidebar-popular a:hover{color:var(--red)}
+    .sp-date{display:block;font-size:.72rem;color:var(--text-ghost);margin-top:.25rem}
+
+    /* ─── PAGINATION ─── */
+    .blog-pagination{
+      display:flex;gap:.5rem;justify-content:center;margin-top:3rem;flex-wrap:wrap
+    }
+    .page-btn{
+      width:40px;height:40px;border-radius:10px;border:1px solid var(--border);
+      display:flex;align-items:center;justify-content:center;
+      font-size:.875rem;font-weight:600;
+      transition:background .2s,color .2s,border-color .2s
+    }
+    .page-btn:hover,.page-btn.active{background:var(--red);color:#fff;border-color:var(--red)}
+
+    /* ─── RESPONSIVE ─── */
+    @media(max-width:1024px){
+      .blog-layout{grid-template-columns:1fr;gap:3rem}
+      .blog-sidebar{position:static}
+      .blog-sidebar .sidebar-cert{order:-1}
+    }
+    @media(max-width:768px){
+      .page-hero{padding:120px 0 80px}
+      .blog-main-grid{grid-template-columns:1fr}
+      .blog-cert-banner{flex-direction:column;gap:1rem}
+    }
+  </style>
+</head>
+<body>
+
+  <div class="noise-overlay" aria-hidden="true"></div>
+  <div class="cursor" id="cursor" aria-hidden="true"></div>
+  <div class="cursor-dot" id="cursor-dot" aria-hidden="true"></div>
+
+   <!-- ═══════════════════════════════════════
+       WhatsApp Button
+  ═══════════════════════════════════════ -->
+  <a href="https://wa.me/91999999999?text=Hello%20LUITECH%20Solutions%2C%20I%20want%20to%20know%20about%20your%20courses"
+   class="whatsapp-float"
+   target="_blank"
+   aria-label="Chat on WhatsApp">
+
+   <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp Chat">
+
+  </a>
+
+  <!-- NAVBAR -->
+  <header class="navbar solid" id="navbar" role="banner">
+    <div class="nav-inner">
+      <a href="index.html" class="logo" aria-label="LUITECH Solutions — Home">
+        <div class="logo-icon" aria-hidden="true">
+          <img src="logo1.png" alt="LUITECH Logo" width="150" height="100">
+        </div>
+      </a>
+      <nav class="nav-menu" id="nav-menu" role="navigation" aria-label="Primary navigation">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="courses.html" class="nav-link">Courses</a>
+        <a href="training.html" class="nav-link">Training</a>
+        <a href="gallery.html" class="nav-link">Gallery</a>
+        <a href="alumni.html" class="nav-link">Alumni</a>
+        <a href="blog.html" class="nav-link" style="color:var(--red)">Blog</a>
+        <a href="review.html" class="nav-link">Reviews</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+        <a href="contact.html#register" class="nav-link nav-register">Register</a>
+      </nav>
+      <button class="burger" id="burger" aria-label="Open navigation" aria-expanded="false" aria-controls="mobile-nav">
+        <span class="burger-bar"></span>
+        <span class="burger-bar"></span>
+        <span class="burger-bar"></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- MOBILE DRAWER -->
+  <div class="mobile-drawer" id="mobile-nav" role="dialog" aria-modal="true" aria-label="Navigation menu" aria-hidden="true">
+    <div class="drawer-backdrop" id="drawer-backdrop"></div>
+    <nav class="drawer-panel" role="navigation">
+      <div class="drawer-links">
+        <p>...</p>
+        <a href="index.html" class="drawer-link">Home</a>
+        <a href="about.html" class="drawer-link">About</a>
+        <a href="courses.html" class="drawer-link">Courses</a>
+        <a href="training.html" class="drawer-link">Training</a>
+        <a href="gallery.html" class="drawer-link">Gallery</a>
+        <a href="alumni.html" class="drawer-link">Alumni</a>
+        <a href="blog.html" class="drawer-link">Blog</a>
+        <a href="review.html" class="drawer-link">Reviews</a>
+        <a href="contact.html" class="drawer-link">Contact</a>
+        <a href="contact.html#register" class="drawer-link drawer-register">Register Now →</a>
+      </div>
+    </nav>
+  </div>
+
+  <main>
+
+    <!-- PAGE HERO -->
+    <section class="page-hero" aria-labelledby="blog-h1">
+      <div class="page-hero-bg">
+        <div class="page-orb page-orb-1"></div>
+        <div class="page-orb page-orb-2"></div>
+        <div class="page-grid-lines"></div>
+      </div>
+      <div class="container page-hero-inner">
+        <p class="section-eyebrow fade-up" style="--d:0s;color:rgba(255,255,255,.4);border-color:rgba(255,255,255,.12)">Insights &amp; Guides</p>
+        <h1 class="fade-up" style="--d:.1s" id="blog-h1">Technology Learning Blog</h1>
+        <p class="fade-up" style="--d:.22s">Career guides, tutorials and industry insights from our expert trainers — helping you navigate the tech landscape.</p>
+      </div>
+    </section>
+
+    <!-- BLOG SECTION -->
+    <section class="section" id="blog" aria-labelledby="blog-section-heading">
+      <div class="container">
+        <h2 class="sr-only" id="blog-section-heading">Blog Articles</h2>
+
+        <div class="blog-layout">
+
+          <!-- MAIN CONTENT -->
+          <div>
+            <!-- Cert Banner -->
+            <div class="blog-cert-banner reveal-fade">
+              <div class="bcb-text">
+                <strong>LUITECH Solutions — Certified &amp; Trusted</strong>
+                <span>Our training is backed by internationally recognised quality standards.</span>
+              </div>
+              <div class="bcb-chips">
+                <span class="bcb-chip">ISO 9001:2015 Certified</span>
+                <span class="bcb-chip">DPIIT Startup India</span>
+              </div>
+            </div>
+
+            <!-- Featured Post -->
+            <article class="blog-featured reveal-fade">
+              <div class="blog-featured-thumb">
+                <span class="blog-cat-pill" style="background:rgba(225,29,46,.9)">Featured</span>
+              </div>
+              <div class="blog-featured-body">
+                <time class="blog-date" datetime="2025-06-01">Jun 1, 2025</time>
+                <h2>How to Start a Career in Cloud Computing — Complete 2025 Guide</h2>
+                <p>Cloud computing is one of the fastest-growing technology sectors, with demand for skilled professionals outpacing supply globally. Whether you're a fresh graduate or switching careers, this guide walks you through the certifications, skills, and steps you need to land your first cloud role.</p>
+                <a href="#blog" class="blog-read-more">
+                  Read Full Article
+                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+                </a>
+              </div>
+            </article>
+
+            <!-- Grid Articles -->
+            <div class="blog-main-grid">
+
+              <article class="blog-card reveal-up" style="--rd:0s">
+                <div class="blog-thumb bt-1">
+                  <span class="blog-cat-pill">Career</span>
+                </div>
+                <div class="blog-body">
+                  <time class="blog-date" datetime="2025-05-18">May 18, 2025</time>
+                  <h3>Best Programming Languages for Beginners in 2025</h3>
+                  <p>Confused about where to start? We break down the top beginner-friendly languages and which one aligns with your career goal.</p>
+                  <a href="#blog" class="blog-read-more">Read Article <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></a>
+                </div>
+              </article>
+
+              <article class="blog-card reveal-up" style="--rd:.08s">
+                <div class="blog-thumb bt-2">
+                  <span class="blog-cat-pill">DevOps</span>
+                </div>
+                <div class="blog-body">
+                  <time class="blog-date" datetime="2025-05-05">May 5, 2025</time>
+                  <h3>The Complete DevOps Career Roadmap for 2025</h3>
+                  <p>From Linux basics to Kubernetes and CI/CD pipelines — here's the exact path to becoming a DevOps engineer this year.</p>
+                  <a href="#blog" class="blog-read-more">Read Article <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></a>
+                </div>
+              </article>
+
+              <article class="blog-card reveal-up" style="--rd:0s">
+                <div class="blog-thumb bt-4">
+                  <span class="blog-cat-pill">Python</span>
+                </div>
+                <div class="blog-body">
+                  <time class="blog-date" datetime="2025-04-20">Apr 20, 2025</time>
+                  <h3>Why Learn Python in 2025 — 7 Compelling Reasons</h3>
+                  <p>From AI and automation to web development, Python dominates. Here's why it should be the next language you master.</p>
+                  <a href="#blog" class="blog-read-more">Read Article <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></a>
+                </div>
+              </article>
+
+              <article class="blog-card reveal-up" style="--rd:.08s">
+                <div class="blog-thumb bt-5">
+                  <span class="blog-cat-pill">Cloud</span>
+                </div>
+                <div class="blog-body">
+                  <time class="blog-date" datetime="2025-04-05">Apr 5, 2025</time>
+                  <h3>Cloud Computing Career Opportunities in India 2025</h3>
+                  <p>The Indian cloud market is growing at 30% per year. Here are the roles, salaries and companies hiring right now.</p>
+                  <a href="#blog" class="blog-read-more">Read Article <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></a>
+                </div>
+              </article>
+
+              <article class="blog-card reveal-up" style="--rd:0s">
+                <div class="blog-thumb bt-6">
+                  <span class="blog-cat-pill">Tips</span>
+                </div>
+                <div class="blog-body">
+                  <time class="blog-date" datetime="2025-03-15">Mar 15, 2025</time>
+                  <h3>Top 10 IT Skills Employers in Assam Are Hiring For</h3>
+                  <p>The Northeast India job market is evolving fast. Here are the skills companies are actively hunting for this year.</p>
+                  <a href="#blog" class="blog-read-more">Read Article <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></a>
+                </div>
+              </article>
+
+              <article class="blog-card reveal-up" style="--rd:.08s">
+                <div class="blog-thumb bt-7">
+                  <span class="blog-cat-pill">Design</span>
+                </div>
+                <div class="blog-body">
+                  <time class="blog-date" datetime="2025-03-01">Mar 1, 2025</time>
+                  <h3>Breaking Into UI/UX Design With No Prior Experience</h3>
+                  <p>A practical guide to building your first design portfolio and landing your first role — degree not required.</p>
+                  <a href="#blog" class="blog-read-more">Read Article <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></a>
+                </div>
+              </article>
+
+            </div>
+
+            <!-- Pagination -->
+            <nav class="blog-pagination" aria-label="Blog pagination">
+              <a href="#blog" class="page-btn active" aria-current="page">1</a>
+              <a href="#blog" class="page-btn">2</a>
+              <a href="#blog" class="page-btn">3</a>
+              <a href="#blog" class="page-btn" aria-label="Next page">→</a>
+            </nav>
+          </div>
+
+          <!-- SIDEBAR -->
+          <aside class="blog-sidebar" aria-label="Blog sidebar">
+
+            <!-- Cert Widget -->
+            <div class="sidebar-widget sidebar-cert">
+              <h3>Our Certifications</h3>
+              <div class="sc-badge">
+                <div class="sc-icon"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1.5l1.4 4.2H13L9.3 8.1l1.4 4.2L7 9.8l-3.7 2.5 1.4-4.2L1 5.7h4.6L7 1.5z" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"/></svg></div>
+                <div class="sc-badge-text">
+                  <strong>ISO 9001:2015</strong>
+                  <span>Certified Organisation</span>
+                </div>
+              </div>
+              <div class="sc-badge">
+                <div class="sc-icon"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="5.5" stroke="currentColor" stroke-width="1.4"/><path d="M4.5 7l2 2 3.5-3.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+                <div class="sc-badge-text">
+                  <strong>DPIIT – Startup India</strong>
+                  <span>Government Recognised</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Categories -->
+            <div class="sidebar-widget">
+              <h3>Categories</h3>
+              <ul class="sidebar-cats">
+                <li><a href="#blog">Cloud Computing <span class="cat-count">8</span></a></li>
+                <li><a href="#blog">DevOps <span class="cat-count">6</span></a></li>
+                <li><a href="#blog">Python &amp; Programming <span class="cat-count">10</span></a></li>
+                <li><a href="#blog">Career Guides <span class="cat-count">12</span></a></li>
+                <li><a href="#blog">UI/UX Design <span class="cat-count">5</span></a></li>
+                <li><a href="#blog">Cybersecurity <span class="cat-count">4</span></a></li>
+                <li><a href="#blog">Data Science &amp; AI <span class="cat-count">7</span></a></li>
+              </ul>
+            </div>
+
+            <!-- Popular Posts -->
+            <div class="sidebar-widget">
+              <h3>Popular Posts</h3>
+              <ul class="sidebar-popular">
+                <li>
+                  <a href="#blog">How to Start a Career in Cloud Computing <span class="sp-date">Jun 1, 2025</span></a>
+                </li>
+                <li>
+                  <a href="#blog">The Complete DevOps Career Roadmap for 2025 <span class="sp-date">May 5, 2025</span></a>
+                </li>
+                <li>
+                  <a href="#blog">Why Learn Python in 2025 <span class="sp-date">Apr 20, 2025</span></a>
+                </li>
+                <li>
+                  <a href="#blog">Top 10 IT Skills Employers in Assam Are Hiring For <span class="sp-date">Mar 15, 2025</span></a>
+                </li>
+              </ul>
+            </div>
+
+            <!-- CTA Widget -->
+            <div class="sidebar-widget" style="background:var(--black);border-color:rgba(225,29,46,.15)">
+              <h3 style="color:rgba(255,255,255,.55);border-color:rgba(255,255,255,.08)">Start Your Journey</h3>
+              <p style="font-size:.84rem;color:rgba(255,255,255,.3);margin-bottom:1.25rem">Join 1000+ students who built real careers through LUITECH's training programs.</p>
+              <a href="contact.html" class="btn-primary" style="width:100%;justify-content:center;font-size:.875rem">
+                <span>Enrol Now</span>
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+              </a>
+            </div>
+
+          </aside>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-col footer-about-col">
+          <div class="logo footer-logo" aria-label="LUITECH Solutions">
+            <div class="logo-icon" aria-hidden="true">
+              <img src="logo.jpg" alt="LUITECH Logo" width="32" height="32">
+            </div>
+            <div class="logo-wordmark">
+              <span class="logo-name" style="color:rgba(255,255,255,.85)">LUITECH</span>
+            </div>
+          </div>
+          <p class="footer-desc">Professional IT Training Institute in Guwahati, Assam. Empowering students with industry-ready tech skills.</p>
+          <div class="social-row" aria-label="Social media">
+            <a href="#" class="social-btn" aria-label="Follow on Facebook"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
+            <a href="#" class="social-btn" aria-label="Follow on Instagram"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><circle cx="17.5" cy="6.5" r=".5" fill="currentColor"/></svg></a>
+            <a href="#" class="social-btn" aria-label="Follow on LinkedIn"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg></a>
+            <a href="#" class="social-btn" aria-label="Subscribe on YouTube"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M22.54 6.42a2.78 2.78 0 00-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 00-1.95 1.96A29 29 0 001 12a29 29 0 00.46 5.58A2.78 2.78 0 003.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.4a2.78 2.78 0 001.95-1.96A29 29 0 0023 12a29 29 0 00-.46-5.58zM9.75 15.02V8.98L15.5 12l-5.75 3.02z"/></svg></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul class="footer-list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="courses.html">Courses</a></li>
+            <li><a href="training.html">Training Programs</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="alumni.html">Alumni</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="review.html">Reviews</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Blog Categories</h4>
+          <ul class="footer-list">
+            <li><a href="blog.html">Cloud Computing</a></li>
+            <li><a href="blog.html">DevOps</a></li>
+            <li><a href="blog.html">Python &amp; Programming</a></li>
+            <li><a href="blog.html">Career Guides</a></li>
+            <li><a href="blog.html">Data Science &amp; AI</a></li>
+            <li><a href="blog.html">Cybersecurity</a></li>
+          </ul>
+        </div>
+        <div class="footer-col footer-contact-col">
+          <h4>Contact</h4>
+          <address class="footer-address">
+            <div class="fc-item">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              <span>1st Floor, Ward No-21, Pragati Building,<br>Pragati Nagar Path, Banik Para,<br>Lal Ganesh, Guwahati, Assam 781034</span>
+            </div>
+            <div class="fc-item">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              <a href="mailto:luitechsolutions@gmail.com">luitechsolutions@gmail.com</a>
+            </div>
+          </address>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© <span id="copy-year"></span> LUITECH Solutions. All rights reserved.</p>
+        <p class="footer-credit">ISO 9001:2015 Certified · DPIIT Startup India Certified</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

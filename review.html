@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Read real student reviews and success stories from LUITECH Solutions graduates. 4.8/5 student satisfaction. Placed in TCS, Infosys, Wipro and more.">
+  <meta name="keywords" content="LUITECH reviews, student testimonials Guwahati, IT training reviews Assam, placement success stories, student feedback LUITECH">
+  <meta name="author" content="LUITECH Solutions">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="Student Reviews — LUITECH Solutions | 4.8/5 Rating">
+  <meta property="og:description" content="Real student testimonials and placement success stories from LUITECH Solutions — Guwahati's premier IT training institute.">
+  <meta property="og:type" content="website">
+  <title>Student Reviews &amp; Success Stories — LUITECH Solutions Guwahati</title>
+  <link rel="icon" type="image/png" href="logo.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Clash+Display:wght@400;500;600;700&family=Bricolage+Grotesque:opsz,wght@12..96,300;12..96,400;12..96,500;12..96,600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* ─── PAGE HERO ─── */
+    .page-hero{
+      background:#060606;padding:160px 0 100px;
+      position:relative;overflow:hidden;text-align:center
+    }
+    .page-hero-bg{position:absolute;inset:0;pointer-events:none}
+    .page-orb{position:absolute;border-radius:50%;filter:blur(120px)}
+    .page-orb-1{width:600px;height:600px;top:50%;left:50%;transform:translate(-50%,-50%);
+      background:radial-gradient(circle,rgba(225,29,46,.15),transparent 70%)}
+    .page-orb-2{width:300px;height:300px;top:-10%;right:10%;
+      background:radial-gradient(circle,rgba(225,29,46,.08),transparent 70%)}
+    .page-grid-lines{
+      position:absolute;inset:0;
+      background-image:linear-gradient(rgba(255,255,255,.02) 1px,transparent 1px),
+        linear-gradient(90deg,rgba(255,255,255,.02) 1px,transparent 1px);
+      background-size:60px 60px;
+      mask-image:radial-gradient(ellipse 70% 70% at 50% 50%,black,transparent)
+    }
+    .page-hero-inner{position:relative;z-index:2}
+    .page-hero h1{color:#fff;margin:.75rem 0 1.25rem}
+    .page-hero p{color:rgba(255,255,255,.45);font-size:1.15rem;max-width:560px;margin:0 auto}
+
+    /* ─── RATING BAND ─── */
+    .rating-band{background:var(--black);padding:4rem 0;border-bottom:1px solid rgba(255,255,255,.06)}
+    .rating-band-inner{
+      display:flex;gap:4rem;justify-content:center;align-items:center;flex-wrap:wrap
+    }
+    .rating-main{text-align:center}
+    .rating-score{
+      font-family:'Clash Display',sans-serif;
+      font-size:5rem;font-weight:700;color:#fff;letter-spacing:-.04em;line-height:1
+    }
+    .rating-score span{color:var(--red)}
+    .rating-stars{color:#f59e0b;font-size:1.75rem;letter-spacing:3px;margin:.5rem 0}
+    .rating-label{font-size:.82rem;color:rgba(255,255,255,.3);letter-spacing:.06em;text-transform:uppercase}
+    .rating-sep{width:1px;height:80px;background:rgba(255,255,255,.08)}
+    .rating-stat{text-align:center}
+    .rating-stat strong{display:block;font-family:'Clash Display',sans-serif;
+      font-size:2.2rem;font-weight:700;color:#fff;letter-spacing:-.03em}
+    .rating-stat span{font-size:.8rem;color:rgba(255,255,255,.3)}
+
+    /* ─── SLIDER ─── */
+    .review-slider-wrap{position:relative;overflow:hidden;border-radius:var(--r-lg)}
+    .review-slider-track{display:flex;transition:transform .65s cubic-bezier(.16,1,.3,1)}
+    .review-slide{
+      min-width:100%;padding:0 .5rem
+    }
+    .review-slide-inner{
+      background:var(--white);border:1px solid var(--border);border-radius:var(--r-lg);
+      padding:3rem;display:grid;grid-template-columns:200px 1fr;gap:3rem;align-items:start
+    }
+    .reviewer-photo{
+      width:200px;height:200px;border-radius:var(--r-lg);
+      background:linear-gradient(135deg,#0d1b2a,#1e3a5f);
+      display:flex;align-items:center;justify-content:center;
+      border:2px solid var(--border);overflow:hidden;flex-shrink:0
+    }
+    .reviewer-photo-placeholder{
+      width:80px;height:80px;border-radius:50%;
+      background:rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center
+    }
+    .reviewer-photo-placeholder svg{color:rgba(255,255,255,.25)}
+    .reviewer-info{margin-bottom:1.5rem}
+    .reviewer-name{font-family:'Clash Display',sans-serif;font-size:1.35rem;font-weight:700;margin-bottom:.2rem}
+    .reviewer-course{font-size:.82rem;color:var(--text-ghost)}
+    .reviewer-company{
+      display:inline-flex;align-items:center;gap:.4rem;
+      margin-top:.5rem;font-size:.78rem;font-weight:600;
+      background:var(--red-alpha);color:var(--red);
+      border:1px solid rgba(225,29,46,.2);
+      padding:.25rem .7rem;border-radius:50px
+    }
+    .reviewer-stars{color:#f59e0b;font-size:.95rem;letter-spacing:2px;margin:1rem 0}
+    .review-quote{
+      font-size:1.05rem;line-height:1.7;color:var(--black);
+      position:relative;padding-left:1.5rem
+    }
+    .review-quote::before{
+      content:'\201C';position:absolute;left:0;top:-.25rem;
+      font-family:'Clash Display',sans-serif;font-size:3rem;color:var(--red);
+      line-height:1;opacity:.3
+    }
+    /* Slider controls */
+    .slider-controls{display:flex;gap:1rem;align-items:center;justify-content:center;margin-top:2rem}
+    .sl-btn{
+      width:44px;height:44px;border-radius:50%;border:1.5px solid var(--border);
+      background:var(--white);display:flex;align-items:center;justify-content:center;
+      color:var(--black);transition:background .2s,border-color .2s,color .2s
+    }
+    .sl-btn:hover{background:var(--red);border-color:var(--red);color:#fff}
+    .sl-dots-row{display:flex;gap:.5rem}
+    .sl-dot-manual{
+      width:8px;height:8px;border-radius:50%;border:none;
+      background:var(--border);transition:background .2s,transform .2s;cursor:pointer
+    }
+    .sl-dot-manual.active{background:var(--red);transform:scale(1.3)}
+
+    /* ─── COMPANIES ─── */
+    .companies-grid{
+      display:grid;grid-template-columns:repeat(5,1fr);gap:1.25rem;margin-top:3rem
+    }
+    .company-card{
+      background:var(--white);border:1px solid var(--border);
+      border-radius:var(--r);padding:1.75rem 1rem;text-align:center;
+      transition:transform .35s var(--ease-spring),box-shadow .3s,border-color .3s
+    }
+    .company-card:hover{transform:translateY(-5px);box-shadow:var(--shadow-md);border-color:rgba(225,29,46,.2)}
+    .company-logo-placeholder{
+      width:56px;height:56px;border-radius:14px;
+      background:var(--surface);border:1px solid var(--border);
+      display:flex;align-items:center;justify-content:center;margin:0 auto 1rem
+    }
+    .company-logo-placeholder svg{color:var(--text-ghost)}
+    .company-card h4{font-size:.9rem;margin-bottom:.3rem}
+    .company-card p{font-size:.75rem}
+    .placed-count{
+      font-family:'Clash Display',sans-serif;
+      font-size:1rem;font-weight:700;color:var(--red);margin-top:.5rem
+    }
+
+    /* ─── RESPONSIVE ─── */
+    @media(max-width:1024px){
+      .review-slide-inner{grid-template-columns:1fr;gap:2rem}
+      .reviewer-photo{width:100%;height:160px;border-radius:var(--r)}
+      .companies-grid{grid-template-columns:repeat(3,1fr)}
+    }
+    @media(max-width:768px){
+      .page-hero{padding:120px 0 80px}
+      .rating-band-inner{gap:2rem}
+      .rating-sep{display:none}
+      .review-slide-inner{padding:2rem 1.5rem}
+      .companies-grid{grid-template-columns:1fr 1fr}
+    }
+    @media(max-width:480px){
+      .companies-grid{grid-template-columns:1fr 1fr}
+      .rating-score{font-size:3.5rem}
+    }
+  </style>
+</head>
+<body>
+
+  <div class="noise-overlay" aria-hidden="true"></div>
+  <div class="cursor" id="cursor" aria-hidden="true"></div>
+  <div class="cursor-dot" id="cursor-dot" aria-hidden="true"></div>
+
+   <!-- ═══════════════════════════════════════
+       WhatsApp Button
+  ═══════════════════════════════════════ -->
+  <a href="https://wa.me/91999999999?text=Hello%20LUITECH%20Solutions%2C%20I%20want%20to%20know%20about%20your%20courses"
+   class="whatsapp-float"
+   target="_blank"
+   aria-label="Chat on WhatsApp">
+
+   <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp Chat">
+
+</a>
+
+  <!-- NAVBAR -->
+  <header class="navbar solid" id="navbar" role="banner">
+    <div class="nav-inner">
+      <a href="index.html" class="logo" aria-label="LUITECH Solutions — Home">
+        <div class="logo-icon" aria-hidden="true">
+          <img src="logo1.png" alt="LUITECH Logo" width="150" height="100">
+        </div>
+      </a>
+      <nav class="nav-menu" id="nav-menu" role="navigation" aria-label="Primary navigation">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="courses.html" class="nav-link">Courses</a>
+        <a href="training.html" class="nav-link">Training</a>
+        <a href="gallery.html" class="nav-link">Gallery</a>
+        <a href="alumni.html" class="nav-link">Alumni</a>
+        <a href="blog.html" class="nav-link">Blog</a>
+        <a href="review.html" class="nav-link" style="color:var(--red)">Reviews</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+        <a href="contact.html#register" class="nav-link nav-register">Register</a>
+      </nav>
+      <button class="burger" id="burger" aria-label="Open navigation" aria-expanded="false" aria-controls="mobile-nav">
+        <span class="burger-bar"></span>
+        <span class="burger-bar"></span>
+        <span class="burger-bar"></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- MOBILE DRAWER -->
+  <div class="mobile-drawer" id="mobile-nav" role="dialog" aria-modal="true" aria-label="Navigation menu" aria-hidden="true">
+    <div class="drawer-backdrop" id="drawer-backdrop"></div>
+    <nav class="drawer-panel" role="navigation">
+      <div class="drawer-links">
+        <p>...</p>
+        <a href="index.html" class="drawer-link">Home</a>
+        <a href="about.html" class="drawer-link">About</a>
+        <a href="courses.html" class="drawer-link">Courses</a>
+        <a href="training.html" class="drawer-link">Training</a>
+        <a href="gallery.html" class="drawer-link">Gallery</a>
+        <a href="alumni.html" class="drawer-link">Alumni</a>
+        <a href="blog.html" class="drawer-link">Blog</a>
+        <a href="review.html" class="drawer-link">Reviews</a>
+        <a href="contact.html" class="drawer-link">Contact</a>
+        <a href="contact.html#register" class="drawer-link drawer-register">Register Now →</a>
+      </div>
+    </nav>
+  </div>
+
+  <main>
+
+    <!-- PAGE HERO -->
+    <section class="page-hero" aria-labelledby="review-h1">
+      <div class="page-hero-bg">
+        <div class="page-orb page-orb-1"></div>
+        <div class="page-orb page-orb-2"></div>
+        <div class="page-grid-lines"></div>
+      </div>
+      <div class="container page-hero-inner">
+        <p class="section-eyebrow fade-up" style="--d:0s;color:rgba(255,255,255,.4);border-color:rgba(255,255,255,.12)">Stories &amp; Feedback</p>
+        <h1 class="fade-up" style="--d:.1s" id="review-h1">Student Reviews and<br>Success Stories</h1>
+        <p class="fade-up" style="--d:.22s">Real feedback from real students who built real careers with LUITECH Solutions.</p>
+      </div>
+    </section>
+
+    <!-- RATING BAND -->
+    <div class="rating-band" aria-label="Overall rating statistics">
+      <div class="container">
+        <div class="rating-band-inner">
+          <div class="rating-main reveal-fade">
+            <div class="rating-score"><span>4.8</span> / 5</div>
+            <div class="rating-stars" aria-label="4.8 out of 5 stars">★★★★★</div>
+            <div class="rating-label">Student Satisfaction</div>
+          </div>
+          <div class="rating-sep" aria-hidden="true"></div>
+          <div class="rating-stat reveal-fade" style="--rd:.08s">
+            <strong>1000+</strong>
+            <span>Students Trained</span>
+          </div>
+          <div class="rating-sep" aria-hidden="true"></div>
+          <div class="rating-stat reveal-fade" style="--rd:.16s">
+            <strong>300+</strong>
+            <span>Placements</span>
+          </div>
+          <div class="rating-sep" aria-hidden="true"></div>
+          <div class="rating-stat reveal-fade" style="--rd:.24s">
+            <strong>96%</strong>
+            <span>Recommend Us</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TESTIMONIALS -->
+    <section class="section" id="testimonials" aria-labelledby="testimonials-heading">
+      <div class="container">
+        <header class="section-header reveal-fade">
+          <p class="section-eyebrow">What Students Say</p>
+          <h2 id="testimonials-heading">Student <span class="text-red">Testimonials</span></h2>
+          <p class="section-sub">Hear directly from graduates who transformed their careers with LUITECH training.</p>
+        </header>
+
+        <div class="review-slider-wrap reveal-fade">
+          <div class="review-slider-track" id="review-track">
+
+            <!-- Slide 1 -->
+            <div class="review-slide" role="group" aria-label="Testimonial 1 of 5">
+              <div class="review-slide-inner">
+                <div class="reviewer-photo" aria-hidden="true">
+                  <div class="reviewer-photo-placeholder">
+                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                  </div>
+                </div>
+                <div>
+                  <div class="reviewer-info">
+                    <div class="reviewer-name">Pratul Das</div>
+                    <div class="reviewer-course">Full Stack Development</div>
+                    <span class="reviewer-company">
+                      <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M1.5 5l2.5 2.5 4.5-4.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                      Placed
+                    </span>
+                  </div>
+                  <div class="reviewer-stars" aria-label="5 stars">★★★★★</div>
+                  <p class="review-quote">LUITECH completely changed my career trajectory. The hands-on approach, live projects, and mentors who actually work in the industry gave me the confidence I needed. I cracked my TCS interview within two months of completing the course.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Slide 2 -->
+            <div class="review-slide" role="group" aria-label="Testimonial 2 of 5">
+              <div class="review-slide-inner">
+                <div class="reviewer-photo" aria-hidden="true">
+                  <div class="reviewer-photo-placeholder">
+                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                  </div>
+                </div>
+                <div>
+                  <div class="reviewer-info">
+                    <div class="reviewer-name">Jyoti Rabha</div>
+                    <div class="reviewer-course">Python &amp; Data Science</div>
+                    <span class="reviewer-company">
+                      <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M1.5 5l2.5 2.5 4.5-4.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                      Placed
+                    </span>
+                  </div>
+                  <div class="reviewer-stars" aria-label="5 stars">★★★★★</div>
+                  <p class="review-quote">The Data Science course at LUITECH is exceptional. From Python basics to machine learning models, everything was taught with real datasets and practical examples. My trainer had years of industry experience and it showed in every session.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Slide 3 -->
+            <div class="review-slide" role="group" aria-label="Testimonial 3 of 5">
+              <div class="review-slide-inner">
+                <div class="reviewer-photo" aria-hidden="true">
+                  <div class="reviewer-photo-placeholder">
+                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                  </div>
+                </div>
+                <div>
+                  <div class="reviewer-info">
+                    <div class="reviewer-name">Pradyut Paul</div>
+                    <div class="reviewer-course">DevOps &amp; Cloud </div>
+                    <span class="reviewer-company">
+                      <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M1.5 5l2.5 2.5 4.5-4.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                      Placed
+                    </span>
+                  </div>
+                  <div class="reviewer-stars" aria-label="5 stars">★★★★★</div>
+                  <p class="review-quote">I came in knowing nothing about Linux. Now I manage AWS infrastructure at Wipro. LUITECH's DevOps program is structured brilliantly — each module builds on the last, and the certification prep made passing my AWS exam straightforward.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Slide 4 -->
+            <div class="review-slide" role="group" aria-label="Testimonial 4 of 5">
+              <div class="review-slide-inner">
+                <div class="reviewer-photo" aria-hidden="true">
+                  <div class="reviewer-photo-placeholder">
+                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                  </div>
+                </div>
+                <div>
+                  <div class="reviewer-info">
+                    <div class="reviewer-name">Harsharaj Nath</div>
+                    <div class="reviewer-course">UI/UX Design</div>
+                    <span class="reviewer-company">
+                      <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M1.5 5l2.5 2.5 4.5-4.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                      Placed
+                    </span>
+                  </div>
+                  <div class="reviewer-stars" aria-label="4 stars">★★★★★</div>
+                  <p class="review-quote">The UI/UX program gave me not just Figma skills but the full design thinking process. The portfolio projects we built were what got me hired at Accenture. The placement cell was genuinely helpful and responsive throughout my job search.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Slide 5 -->
+            <div class="review-slide" role="group" aria-label="Testimonial 5 of 5">
+              <div class="review-slide-inner">
+                <div class="reviewer-photo" aria-hidden="true">
+                  <div class="reviewer-photo-placeholder">
+                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                  </div>
+                </div>
+                <div>
+                  <div class="reviewer-info">
+                    <div class="reviewer-name">Mridu Sankar Das</div>
+                    <div class="reviewer-course">RedHat Linux &amp; Cloud </div>
+                    <span class="reviewer-company">
+                      <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M1.5 5l2.5 2.5 4.5-4.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                     Placed
+                    </span>
+                  </div>
+                  <div class="reviewer-stars" aria-label="5 stars">★★★★★</div>
+                  <p class="review-quote">Preparing for the RHCSA exam felt overwhelming until I found LUITECH. The structured study plan, lab access, and mock exams made all the difference. I cleared the exam on first attempt and received my Capgemini offer letter shortly after.</p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Slider Controls -->
+        <div class="slider-controls">
+          <button class="sl-btn" id="rev-prev" aria-label="Previous testimonial">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M10 4l-4 4 4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <div class="sl-dots-row" id="rev-dots" role="tablist" aria-label="Testimonial navigation"></div>
+          <button class="sl-btn" id="rev-next" aria-label="Next testimonial">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M6 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- PLACEMENT SUCCESS -->
+    <section class="section" style="background:var(--surface)" id="placement" aria-labelledby="placement-heading">
+      <div class="container">
+        <header class="section-header reveal-fade">
+          <p class="section-eyebrow">Where Our Graduates Work</p>
+          <h2 id="placement-heading">Placement <span class="text-red">Success</span></h2>
+          <p class="section-sub">LUITECH graduates are working at India's top IT companies and global organisations.</p>
+        </header>
+        <div class="companies-grid">
+          <div class="company-card reveal-up" style="--rd:0s">
+            <div class="company-logo-placeholder" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="4"/><path d="M9 12h6M12 9v6"/></svg>
+            </div>
+            <h4>TCS</h4>
+            <p>Tata Consultancy Services</p>
+            <div class="placed-count">45+ Placed</div>
+          </div>
+          <div class="company-card reveal-up" style="--rd:.06s">
+            <div class="company-logo-placeholder" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="4"/><path d="M9 12h6M12 9v6"/></svg>
+            </div>
+            <h4>Infosys</h4>
+            <p>Infosys Limited</p>
+            <div class="placed-count">38+ Placed</div>
+          </div>
+          <div class="company-card reveal-up" style="--rd:.12s">
+            <div class="company-logo-placeholder" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="4"/><path d="M9 12h6M12 9v6"/></svg>
+            </div>
+            <h4>Wipro</h4>
+            <p>Wipro Technologies</p>
+            <div class="placed-count">32+ Placed</div>
+          </div>
+          <div class="company-card reveal-up" style="--rd:.18s">
+            <div class="company-logo-placeholder" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="4"/><path d="M9 12h6M12 9v6"/></svg>
+            </div>
+            <h4>Accenture</h4>
+            <p>Accenture India</p>
+            <div class="placed-count">28+ Placed</div>
+          </div>
+          <div class="company-card reveal-up" style="--rd:.24s">
+            <div class="company-logo-placeholder" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="4"/><path d="M9 12h6M12 9v6"/></svg>
+            </div>
+            <h4>Capgemini</h4>
+            <p>Capgemini SE</p>
+            <div class="placed-count">22+ Placed</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section" aria-labelledby="review-cta-heading">
+      <div class="cta-canvas" aria-hidden="true">
+        <div class="cta-orb cta-orb-1"></div>
+        <div class="cta-orb cta-orb-2"></div>
+        <div class="cta-grid-lines"></div>
+      </div>
+      <div class="container">
+        <div class="cta-inner reveal-fade">
+          <p class="section-eyebrow" style="color:rgba(255,255,255,.4);border-color:rgba(255,255,255,.12)">4.8 / 5 Student Satisfaction</p>
+          <h2 id="review-cta-heading" class="cta-headline">
+            Be the Next<br><span class="cta-red">Success Story</span>.
+          </h2>
+          <p class="cta-sub">Join 1000+ graduates who transformed their careers with LUITECH's industry-certified training.</p>
+          <div class="cta-btns">
+            <a href="contact.html" class="btn-cta-primary">
+              <span>Register Now</span>
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+            </a>
+            <a href="https://wa.me/919399019999" class="btn-cta-ghost">Talk to a Counselor</a>
+          </div>
+          <p class="cta-fine">ISO 9001:2015 Certified · DPIIT Startup India Certified · Placement support included</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-col footer-about-col">
+          <div class="logo footer-logo" aria-label="LUITECH Solutions">
+            <div class="logo-icon" aria-hidden="true">
+              <img src="logo.jpg" alt="LUITECH Logo" width="32" height="32">
+            </div>
+            <div class="logo-wordmark">
+              <span class="logo-name" style="color:rgba(255,255,255,.85)">LUITECH</span>
+            </div>
+          </div>
+          <p class="footer-desc">Professional IT Training Institute in Guwahati, Assam. Empowering students with industry-ready tech skills.</p>
+          <div class="social-row" aria-label="Social media">
+            <a href="#" class="social-btn" aria-label="Follow on Facebook"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
+            <a href="#" class="social-btn" aria-label="Follow on Instagram"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><circle cx="17.5" cy="6.5" r=".5" fill="currentColor"/></svg></a>
+            <a href="#" class="social-btn" aria-label="Follow on LinkedIn"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg></a>
+            <a href="#" class="social-btn" aria-label="Subscribe on YouTube"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M22.54 6.42a2.78 2.78 0 00-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 00-1.95 1.96A29 29 0 001 12a29 29 0 00.46 5.58A2.78 2.78 0 003.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.4a2.78 2.78 0 001.95-1.96A29 29 0 0023 12a29 29 0 00-.46-5.58zM9.75 15.02V8.98L15.5 12l-5.75 3.02z"/></svg></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul class="footer-list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="courses.html">Courses</a></li>
+            <li><a href="training.html">Training Programs</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="alumni.html">Alumni</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="review.html">Reviews</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Course Categories</h4>
+          <ul class="footer-list">
+            <li><a href="courses.html">RedHat Courses</a></li>
+            <li><a href="courses.html">Cloud Computing</a></li>
+            <li><a href="courses.html">DevOps</a></li>
+            <li><a href="courses.html">Data Science &amp; AI</a></li>
+            <li><a href="courses.html">Azure / Cloud Infra</a></li>
+            <li><a href="courses.html">Networking &amp; SysAdmin</a></li>
+          </ul>
+        </div>
+        <div class="footer-col footer-contact-col">
+          <h4>Contact</h4>
+          <address class="footer-address">
+            <div class="fc-item">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              <span>1st Floor, Ward No-21, Pragati Building,<br>Pragati Nagar Path, Banik Para,<br>Lal Ganesh, Guwahati, Assam 781034</span>
+            </div>
+            <div class="fc-item">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              <a href="mailto:luitechsolutions@gmail.com">luitechsolutions@gmail.com</a>
+            </div>
+          </address>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© <span id="copy-year"></span> LUITECH Solutions. All rights reserved.</p>
+        <p class="footer-credit">ISO 9001:2015 Certified · DPIIT Startup India Certified</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+  <script>
+    // Review page testimonial slider
+    (function() {
+      const track = document.getElementById('review-track');
+      const dotsContainer = document.getElementById('rev-dots');
+      const prevBtn = document.getElementById('rev-prev');
+      const nextBtn = document.getElementById('rev-next');
+      if (!track) return;
+      const slides = track.querySelectorAll('.review-slide');
+      let current = 0;
+      let autoTimer;
+
+      slides.forEach((_, i) => {
+        const dot = document.createElement('button');
+        dot.className = 'sl-dot-manual' + (i === 0 ? ' active' : '');
+        dot.setAttribute('role','tab');
+        dot.setAttribute('aria-label', `Testimonial ${i+1}`);
+        dot.addEventListener('click', () => go(i));
+        dotsContainer.appendChild(dot);
+      });
+
+      function updateDots() {
+        dotsContainer.querySelectorAll('.sl-dot-manual').forEach((d,i) => {
+          d.classList.toggle('active', i === current);
+        });
+      }
+
+      function go(index) {
+        current = ((index % slides.length) + slides.length) % slides.length;
+        track.style.transform = `translateX(-${current * 100}%)`;
+        updateDots();
+      }
+
+      function startAuto() { autoTimer = setInterval(() => go(current + 1), 5500); }
+      function stopAuto() { clearInterval(autoTimer); }
+
+      prevBtn.addEventListener('click', () => { stopAuto(); go(current - 1); startAuto(); });
+      nextBtn.addEventListener('click', () => { stopAuto(); go(current + 1); startAuto(); });
+
+      let tx = 0;
+      track.addEventListener('touchstart', e => { tx = e.changedTouches[0].clientX; }, { passive: true });
+      track.addEventListener('touchend', e => {
+        const delta = tx - e.changedTouches[0].clientX;
+        if (Math.abs(delta) > 48) { stopAuto(); delta > 0 ? go(current+1) : go(current-1); startAuto(); }
+      }, { passive: true });
+
+      startAuto();
+    })();
+  </script>
+</body>
+</html>

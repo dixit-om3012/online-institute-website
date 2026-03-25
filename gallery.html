@@ -1,0 +1,873 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="LUITECH Solutions Gallery — Explore moments from our IT training programs, technical workshops, hackathons, and student activities in Guwahati, Assam.">
+  <meta name="keywords" content="LUITECH gallery, IT training photos, coding workshop Guwahati, hackathon Assam, student activities, tech events">
+  <meta name="author" content="LUITECH Solutions">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="Student Gallery | LUITECH Solutions">
+  <meta property="og:description" content="Explore moments from LUITECH's IT training programs, workshops, hackathons and student activities.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="en_IN">
+  <title>Student Gallery | LUITECH Solutions</title>
+  <link rel="icon" type="image/png" href="logo.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Clash+Display:wght@400;500;600;700&family=Bricolage+Grotesque:opsz,wght@12..96,300;12..96,400;12..96,500;12..96,600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* ═══════════ GALLERY PAGE STYLES ═══════════ */
+
+    /* ── PAGE HERO ── */
+    .page-hero {
+      padding: calc(var(--nav-h) + 5rem) 0 5rem;
+      background: var(--off-white);
+      position: relative;
+      overflow: hidden;
+      text-align: center;
+    }
+    .page-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(225,29,46,.06), transparent 70%);
+      pointer-events: none;
+    }
+    .page-hero-grid {
+      position: absolute; inset: 0; pointer-events: none;
+      background-image:
+        linear-gradient(rgba(0,0,0,.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0,0,0,.04) 1px, transparent 1px);
+      background-size: 48px 48px;
+      mask-image: radial-gradient(ellipse 70% 100% at 50% 0%, black, transparent);
+    }
+    .page-hero-content { position: relative; z-index: 2; }
+    .page-hero h1 {
+      font-size: clamp(2.4rem, 5vw, 4rem);
+      letter-spacing: -0.04em;
+      margin: .75rem 0 1.1rem;
+      color: var(--black);
+    }
+    .page-hero h1 em { font-style: italic; color: var(--red); }
+    .page-hero p {
+      font-size: 1.1rem;
+      max-width: 540px;
+      margin: 0 auto;
+      color: var(--text-muted);
+    }
+
+    
+
+    /* ── FILTER TABS ── */
+    .gallery-filters {
+      display: flex;
+      justify-content: center;
+      gap: .5rem;
+      flex-wrap: wrap;
+      margin-bottom: 3.5rem;
+    }
+    .filter-btn {
+      padding: .5rem 1.25rem;
+      border-radius: 50px;
+      border: 1.5px solid var(--border);
+      background: transparent;
+      color: var(--text-muted);
+      font-size: .82rem;
+      font-weight: 600;
+      font-family: inherit;
+      letter-spacing: .02em;
+      cursor: pointer;
+      transition: all .25s var(--ease);
+    }
+    .filter-btn:hover { border-color: var(--red); color: var(--red); background: var(--red-alpha); }
+    .filter-btn.active { background: var(--red); color: #fff; border-color: var(--red); }
+
+    /* ── MASONRY GRID ── */
+    .gallery-section { background: var(--white); }
+    .masonry-wrapper { padding: 0 0 80px; }
+
+    .masonry-category { margin-bottom: 5rem; }
+    .masonry-category:last-child { margin-bottom: 0; }
+    .category-label {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+    .category-label h2 {
+      font-size: 1.5rem;
+      letter-spacing: -0.03em;
+      white-space: nowrap;
+    }
+    .category-label::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+    }
+
+    .masonry-grid {
+      columns: 3;
+      column-gap: 1.25rem;
+    }
+    .masonry-item {
+      break-inside: avoid;
+      margin-bottom: 1.25rem;
+      border-radius: var(--r);
+      overflow: hidden;
+      cursor: pointer;
+      position: relative;
+    }
+    .masonry-item:nth-child(3n+1) { transform-origin: left; }
+    .masonry-item:nth-child(3n+2) { transform-origin: center; }
+    .masonry-item:nth-child(3n+3) { transform-origin: right; }
+
+    .masonry-img {
+      width: 100%;
+      display: block;
+      border-radius: var(--r);
+      transition: transform .5s var(--ease-out), box-shadow .5s;
+      aspect-ratio: auto;
+    }
+    /* Varied aspect ratios for masonry feel */
+    .masonry-item:nth-child(odd) .masonry-img { aspect-ratio: 4/3; }
+    .masonry-item:nth-child(even) .masonry-img { aspect-ratio: 3/4; }
+    .masonry-item:nth-child(3n) .masonry-img { aspect-ratio: 16/9; }
+
+    .masonry-item:hover .masonry-img {
+      transform: scale(1.04);
+      box-shadow: var(--shadow-lg);
+    }
+    .masonry-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to top, rgba(10,10,10,.75) 0%, transparent 55%);
+      opacity: 0;
+      transition: opacity .35s var(--ease);
+      border-radius: var(--r);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 1.25rem;
+    }
+    .masonry-item:hover .masonry-overlay { opacity: 1; }
+    .overlay-caption {
+      color: #fff;
+      font-size: .82rem;
+      font-weight: 600;
+      letter-spacing: .02em;
+    }
+    .overlay-view {
+      display: inline-flex;
+      align-items: center;
+      gap: .3rem;
+      font-size: .75rem;
+      color: rgba(255,255,255,.6);
+      margin-top: .25rem;
+    }
+
+    /* Image placeholders with gradients (until real images added) */
+    .img-placeholder {
+      width: 100%;
+      display: block;
+      border-radius: var(--r);
+      transition: transform .5s var(--ease-out), box-shadow .5s;
+    }
+    .masonry-item:nth-child(odd) .img-placeholder { aspect-ratio: 4/3; }
+    .masonry-item:nth-child(even) .img-placeholder { aspect-ratio: 3/4; }
+    .masonry-item:nth-child(3n) .img-placeholder { aspect-ratio: 16/9; }
+
+    .masonry-item:hover .img-placeholder {
+      transform: scale(1.04);
+      box-shadow: var(--shadow-lg);
+    }
+
+    /* Category color themes for placeholders */
+    .cat-classroom .img-placeholder { background: linear-gradient(135deg, #0d1b2a 0%, #1a3a5f 40%, #0d2644 100%); }
+    .cat-workshop  .img-placeholder { background: linear-gradient(135deg, #1a0608 0%, #5c1422 40%, #2d0a10 100%); }
+    .cat-hackathon .img-placeholder { background: linear-gradient(135deg, #071a0d 0%, #0f4527 40%, #062010 100%); }
+    .cat-student   .img-placeholder { background: linear-gradient(135deg, #160d22 0%, #3b1469 40%, #1a0d30 100%); }
+
+    /* Inner decorative content for placeholder */
+    .img-placeholder { position: relative; overflow: hidden; }
+    .img-placeholder::before {
+      content: '';
+      position: absolute; inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.08'/%3E%3C/svg%3E");
+      background-size: 150px 150px;
+    }
+    .ph-icon {
+      position: absolute; inset: 0;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      gap: .5rem;
+      color: rgba(255,255,255,.18);
+    }
+    .ph-icon svg { width: 36px; height: 36px; }
+    .ph-icon span { font-size: .72rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; }
+
+    /* Reveal animation for masonry items */
+    .masonry-item.reveal-up { opacity: 0; transform: translateY(32px); }
+    .masonry-item.reveal-up.in { opacity: 1; transform: translateY(0); }
+
+    /* ── LIGHTBOX ── */
+    .lightbox-overlay {
+      position: fixed; inset: 0; z-index: 2000;
+      background: rgba(4,4,4,.96);
+      display: flex; align-items: center; justify-content: center;
+      opacity: 0; pointer-events: none;
+      transition: opacity .35s var(--ease);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+    .lightbox-overlay.open { opacity: 1; pointer-events: all; }
+    .lightbox-inner {
+      position: relative;
+      max-width: 90vw;
+      max-height: 90vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+      transform: scale(.94);
+      transition: transform .35s var(--ease-out);
+    }
+    .lightbox-overlay.open .lightbox-inner { transform: scale(1); }
+    .lightbox-img-wrap {
+      max-width: 85vw;
+      max-height: 78vh;
+      border-radius: var(--r-lg);
+      overflow: hidden;
+      box-shadow: 0 40px 120px rgba(0,0,0,.6);
+    }
+    .lightbox-img-wrap img,
+    .lightbox-img-wrap .lb-placeholder {
+      display: block;
+      max-width: 100%;
+      max-height: 78vh;
+      object-fit: cover;
+      border-radius: var(--r-lg);
+    }
+    .lb-placeholder {
+      width: 720px;
+      max-width: 85vw;
+      height: 480px;
+      max-height: 75vh;
+    }
+    .lightbox-caption {
+      color: rgba(255,255,255,.6);
+      font-size: .85rem;
+      letter-spacing: .02em;
+      text-align: center;
+    }
+    .lb-close {
+      position: fixed; top: 1.5rem; right: 1.75rem;
+      width: 44px; height: 44px; border-radius: 50%;
+      background: rgba(255,255,255,.08);
+      border: 1px solid rgba(255,255,255,.12);
+      color: #fff;
+      display: flex; align-items: center; justify-content: center;
+      cursor: pointer;
+      transition: background .2s;
+      z-index: 10;
+    }
+    .lb-close:hover { background: rgba(225,29,46,.4); }
+    .lb-nav {
+      position: fixed; top: 50%; transform: translateY(-50%);
+      width: 48px; height: 48px; border-radius: 50%;
+      background: rgba(255,255,255,.06);
+      border: 1px solid rgba(255,255,255,.1);
+      color: rgba(255,255,255,.7);
+      display: flex; align-items: center; justify-content: center;
+      cursor: pointer;
+      transition: background .2s, color .2s;
+    }
+    .lb-nav:hover { background: rgba(255,255,255,.14); color: #fff; }
+    .lb-prev { left: 1.5rem; }
+    .lb-next { right: 1.5rem; }
+    .lb-counter {
+      position: fixed; bottom: 1.5rem; left: 50%; transform: translateX(-50%);
+      font-size: .76rem; color: rgba(255,255,255,.3);
+      letter-spacing: .08em; font-family: 'JetBrains Mono', monospace;
+    }
+
+    /* ── STATS STRIP ── */
+    .gallery-stats {
+      background: var(--black);
+      padding: 56px 0;
+    }
+    .gallery-stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+      text-align: center;
+    }
+    .g-stat {
+      padding: 0 2rem;
+      border-right: 1px solid rgba(255,255,255,.06);
+    }
+    .g-stat:last-child { border-right: none; }
+    .g-stat-num {
+      font-family: 'Clash Display', sans-serif;
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #fff;
+      letter-spacing: -0.04em;
+      display: block;
+    }
+    .g-stat-num span { color: var(--red); }
+    .g-stat-label {
+      font-size: .78rem;
+      color: rgba(255,255,255,.3);
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      margin-top: .25rem;
+      display: block;
+    }
+
+    /* RESPONSIVE */
+    @media(max-width: 1024px) {
+      .masonry-grid { columns: 2; }
+    }
+    @media(max-width: 768px) {
+      .masonry-grid { columns: 1; }
+      .gallery-stats-grid { grid-template-columns: 1fr 1fr; gap: 2rem 0; }
+      .g-stat { border-right: none; padding: 0 1rem; }
+      .g-stat:nth-child(odd) { border-right: 1px solid rgba(255,255,255,.06); }
+      .page-hero { padding: calc(var(--nav-h) + 3rem) 0 3.5rem; }
+      .lb-prev { left: .5rem; }
+      .lb-next { right: .5rem; }
+    }
+    @media(max-width: 480px) {
+      .gallery-stats-grid { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="noise-overlay" aria-hidden="true"></div>
+  <div class="cursor" id="cursor" aria-hidden="true"></div>
+  <div class="cursor-dot" id="cursor-dot" aria-hidden="true"></div>
+   <!-- ═══════════════════════════════════════
+       WhatsApp Button
+  ═══════════════════════════════════════ -->
+  <a href="https://wa.me/91999999999?text=Hello%20LUITECH%20Solutions%2C%20I%20want%20to%20know%20about%20your%20courses"
+   class="whatsapp-float"
+   target="_blank"
+   aria-label="Chat on WhatsApp">
+
+   <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp Chat">
+
+  </a>
+
+  <!-- ══════════════ NAVBAR ══════════════ -->
+  <header class="navbar solid" id="navbar" role="banner">
+    <div class="nav-inner">
+      <div class="logo" aria-label="LUITECH Solutions — Home">
+        <div class="logo-icon" aria-hidden="true">
+          <img src="logo1.png" alt="LUITECH Logo" width="150" height="100">
+        </div>
+      </div>
+      <nav class="nav-menu" id="nav-menu" role="navigation" aria-label="Primary navigation">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="courses.html" class="nav-link">Courses</a>
+        <a href="training.html" class="nav-link">Training</a>
+        <a href="gallery.html" class="nav-link" aria-current="page" style="color:var(--red)">Gallery</a>
+        <a href="alumni.html" class="nav-link">Alumni</a>
+        <a href="blog.html" class="nav-link">Blog</a>
+        <a href="review.html" class="nav-link">Reviews</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+        <a href="ragister.html" class="nav-link nav-register">Register</a>
+      </nav>
+      <button class="burger" id="burger" aria-label="Open navigation" aria-expanded="false" aria-controls="mobile-nav">
+        <span class="burger-bar"></span>
+        <span class="burger-bar"></span>
+        <span class="burger-bar"></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ── MOBILE DRAWER ── -->
+  <div class="mobile-drawer" id="mobile-nav" role="dialog" aria-modal="true" aria-label="Navigation menu" aria-hidden="true">
+    <div class="drawer-backdrop" id="drawer-backdrop"></div>
+    <nav class="drawer-panel" role="navigation">
+      <div class="drawer-links">
+        <p>...</p>
+        <a href="index.html" class="drawer-link">Home</a>
+        <a href="about.html" class="drawer-link">About</a>
+        <a href="courses.html" class="drawer-link">Courses</a>
+        <a href="training.html" class="drawer-link">Training</a>
+        <a href="gallery.html" class="drawer-link" style="color:var(--red)">Gallery</a>
+        <a href="alumni.html" class="drawer-link">Alumni</a>
+        <a href="blog.html" class="drawer-link">Blog</a>
+        <a href="review.html" class="drawer-link">Reviews</a>
+        <a href="contact.html" class="drawer-link">Contact</a>
+        <a href="ragister.html" class="drawer-link drawer-register">Register Now →</a>
+      </div>
+    </nav>
+  </div>
+
+  <main>
+
+    <!-- ══════════════ HERO ══════════════ -->
+    <section class="page-hero" aria-labelledby="gallery-h1">
+      <div class="page-hero-grid" aria-hidden="true"></div>
+      <div class="container page-hero-content">
+        <p class="section-eyebrow reveal-fade" style="--rd:0s">Our Training Gallery</p>
+        <h1 id="gallery-h1" class="reveal-fade" style="--rd:.08s">
+          LUITECH Training <em>Gallery</em>
+        </h1>
+        <p class="reveal-fade" style="--rd:.16s">
+          Explore moments from our training programs, workshops, and student activities — where skills are built and careers begin.
+        </p>
+
+        <!-- Filter Tabs -->
+        <div class="gallery-filters reveal-fade" style="--rd:.24s; margin-top: 2.5rem;">
+          <button class="filter-btn active" data-filter="all">All Photos</button>
+          <button class="filter-btn" data-filter="classroom">Classroom Training</button>
+          <button class="filter-btn" data-filter="workshop">Workshops</button>
+          <!-- <button class="filter-btn" data-filter="hackathon">Hackathons &amp; Events</button> -->
+          <button class="filter-btn" data-filter="student">Student Activities</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════ GALLERY GRID ══════════════ -->
+    <section class="gallery-section section" aria-label="Photo Gallery">
+      <div class="container masonry-wrapper">
+ 
+        <!-- CLASSROOM TRAINING -->
+        <div class="masonry-category" data-category="classroom">
+          <div class="category-label reveal-fade">
+            <p class="section-eyebrow" style="margin:0">01</p>
+            <h2>Classroom Training</h2>
+          </div>
+          <div class="masonry-grid">
+ 
+            <div class="masonry-item cat-classroom reveal-up" style="--rd:0s" data-caption="Classroom Training" tabindex="0" role="button" aria-label="View: Classroom Training">
+              <img src="images/classroom.jpeg" class="masonry-img" alt="Classroom Training" loading="lazy">
+              <div class="masonry-overlay">
+                <span class="overlay-caption">Classroom Training</span>
+                <span class="overlay-view">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+                  View Full Image
+                </span>
+              </div>
+            </div>
+ 
+            <div class="masonry-item cat-classroom reveal-up" style="--rd:.06s" data-caption="Cloud Computing Training" tabindex="0" role="button" aria-label="View: Cloud Computing Training">
+              <img src="images/cloud.jpeg" class="masonry-img" alt="Cloud Computing Training" loading="lazy">
+              <div class="masonry-overlay">
+                <span class="overlay-caption">Cloud Computing Training</span>
+                <span class="overlay-view"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg> View Full Image</span>
+              </div>
+            </div>
+ 
+            <div class="masonry-item cat-classroom reveal-up" style="--rd:.12s" data-caption="Cloud Training at LUITECH" tabindex="0" role="button" aria-label="View: Cloud Training at LUITECH">
+              <img src="images/cloudAtLucitech.jpeg" class="masonry-img" alt="Cloud Training at LUITECH" loading="lazy">
+              <div class="masonry-overlay">
+                <span class="overlay-caption">Cloud Training at LUITECH</span>
+                <span class="overlay-view"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg> View Full Image</span>
+              </div>
+            </div>
+ 
+            <div class="masonry-item cat-classroom reveal-up" style="--rd:.18s" data-caption="Lab Session" tabindex="0" role="button" aria-label="View: Lab Session">
+              <img src="images/lab.jpeg" class="masonry-img" alt="Lab Session" loading="lazy">
+              <div class="masonry-overlay">
+                <span class="overlay-caption">Lab Session</span>
+                <span class="overlay-view"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg> View Full Image</span>
+              </div>
+            </div>
+ 
+            <div class="masonry-item cat-classroom reveal-up" style="--rd:.24s" data-caption="Hands-on Lab Session" tabindex="0" role="button" aria-label="View: Hands-on Lab Session">
+              <img src="images/labsession.jpeg" class="masonry-img" alt="Hands-on Lab Session" loading="lazy">
+              <div class="masonry-overlay">
+                <span class="overlay-caption">Hands-on Lab Session</span>
+                <span class="overlay-view"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg> View Full Image</span>
+              </div>
+            </div>
+ 
+          </div>
+        </div>
+ 
+        <!-- WORKSHOPS -->
+        <div class="masonry-category" data-category="workshop">
+          <div class="category-label reveal-fade">
+            <p class="section-eyebrow" style="margin:0">02</p>
+            <h2>Technical Workshops</h2>
+          </div>
+          <div class="masonry-grid">
+ 
+            <div class="masonry-item cat-workshop reveal-up" style="--rd:0s" data-caption="Technical Workshop" tabindex="0" role="button" aria-label="View: Technical Workshop">
+              <img src="images/workshop.jpeg" class="masonry-img" alt="Technical Workshop" loading="lazy">
+              <div class="masonry-overlay">
+                <span class="overlay-caption">Technical Workshop</span>
+                <span class="overlay-view"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg> View Full Image</span>
+              </div>
+            </div>
+ 
+            <div class="masonry-item cat-workshop reveal-up" style="--rd:.06s" data-caption="Code Lab Session" tabindex="0" role="button" aria-label="View: Code Lab Session">
+              <img src="images/codelab.jpeg" class="masonry-img" alt="Code Lab Session" loading="lazy">
+              <div class="masonry-overlay">
+                <span class="overlay-caption">Code Lab Session</span>
+                <span class="overlay-view"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg> View Full Image</span>
+              </div>
+            </div>
+ 
+            <div class="masonry-item cat-workshop reveal-up" style="--rd:.12s" data-caption="Data Science Workshop" tabindex="0" role="button" aria-label="View: Data Science Workshop">
+              <img src="images/datascience.jpeg" class="masonry-img" alt="Data Science Workshop" loading="lazy">
+              <div class="masonry-overlay">
+                <span class="overlay-caption">Data Science Workshop</span>
+                <span class="overlay-view"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg> View Full Image</span>
+              </div>
+            </div>
+ 
+          </div>
+        </div>
+ 
+        <!-- STUDENT ACTIVITIES -->
+        <div class="masonry-category" data-category="student">
+          <div class="category-label reveal-fade">
+            <p class="section-eyebrow" style="margin:0">03</p>
+            <h2>Student Activities</h2>
+          </div>
+          <div class="masonry-grid">
+ 
+            <div class="masonry-item cat-student reveal-up" style="--rd:0s" data-caption="Group Discussion" tabindex="0" role="button" aria-label="View: Group Discussion">
+              <img src="images/groupdiscussion.jpeg" class="masonry-img" alt="Group Discussion" loading="lazy">
+              <div class="masonry-overlay">
+                <span class="overlay-caption">Group Discussion</span>
+                <span class="overlay-view"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg> View Full Image</span>
+              </div>
+            </div>
+ 
+            <div class="masonry-item cat-student reveal-up" style="--rd:.06s" data-caption="Hackathon" tabindex="0" role="button" aria-label="View: Hackathon">
+              <img src="images/hackathon.jpeg" class="masonry-img" alt="Hackathon" loading="lazy">
+              <div class="masonry-overlay">
+                <span class="overlay-caption">Hackathon</span>
+                <span class="overlay-view"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg> View Full Image</span>
+              </div>
+            </div>
+ 
+            <div class="masonry-item cat-student reveal-up" style="--rd:.12s" data-caption="Placement Drive" tabindex="0" role="button" aria-label="View: Placement Drive">
+              <img src="images/placement.jpeg" class="masonry-img" alt="Placement Drive" loading="lazy">
+              <div class="masonry-overlay">
+                <span class="overlay-caption">Placement Drive</span>
+                <span class="overlay-view"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg> View Full Image</span>
+              </div>
+            </div>
+ 
+          </div>
+        </div>
+ 
+      </div>
+    </section>
+
+    <!-- ══════════════ STATS STRIP ══════════════ -->
+    <div class="gallery-stats" aria-label="Gallery Statistics">
+      <div class="container">
+        <div class="gallery-stats-grid">
+          <div class="g-stat reveal-fade" style="--rd:0s">
+            <span class="g-stat-num"><span class="count-up" data-target="500">0</span>+</span>
+            <span class="g-stat-label">Photos &amp; Moments</span>
+          </div>
+          <div class="g-stat reveal-fade" style="--rd:.1s">
+            <span class="g-stat-num"><span class="count-up" data-target="12">0</span></span>
+            <span class="g-stat-label">Annual Events</span>
+          </div>
+          <div class="g-stat reveal-fade" style="--rd:.2s">
+            <span class="g-stat-num"><span class="count-up" data-target="8">0</span></span>
+            <span class="g-stat-label">Hackathons Hosted</span>
+          </div>
+          <div class="g-stat reveal-fade" style="--rd:.3s">
+            <span class="g-stat-num"><span class="count-up" data-target="1000">0</span>+</span>
+            <span class="g-stat-label">Students Trained</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══════════════ CTA ══════════════ -->
+    <section class="cta-section" aria-labelledby="gallery-cta">
+      <div class="cta-canvas" aria-hidden="true">
+        <div class="cta-orb cta-orb-1"></div>
+        <div class="cta-orb cta-orb-2"></div>
+        <div class="cta-grid-lines"></div>
+      </div>
+      <div class="container">
+        <div class="cta-inner reveal-fade">
+          <p class="section-eyebrow" style="color:rgba(255,255,255,.4);border-color:rgba(255,255,255,.12)">Be Part of the Story</p>
+          <h2 id="gallery-cta" class="cta-headline">
+            Join Our Next<br>Batch at <span class="cta-red">LUITECH</span>
+          </h2>
+          <p class="cta-sub">Be part of the next chapter. Enroll today and create your own success story.</p>
+          <div class="cta-btns">
+            <a href="contact.html" class="btn-cta-primary">
+              <span>Register Now</span>
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+            </a>
+            <a href="https://wa.me/919399019999" class="btn-cta-ghost">Talk to a Counselor</a>
+          </div>
+          <p class="cta-fine">No prior experience required · Certificate on completion · Placement support included</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ══════════════ FOOTER ══════════════ -->
+  <footer class="footer" id="contact" role="contentinfo">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-col footer-about-col">
+          <div class="logo footer-logo" aria-label="LUITECH Solutions">
+            <div class="logo-icon" aria-hidden="true">
+              <img src="logo.jpg" alt="LUITECH Logo" width="32" height="32">
+            </div>
+            <div class="logo-wordmark">
+              <span class="logo-name" style="color:rgba(255,255,255,.85)">LUITECH</span>
+            </div>
+          </div>
+          <p class="footer-desc">Professional IT Training Institute in Guwahati, Assam. Empowering students with industry-ready tech skills since 2015.</p>
+          <div class="social-row" aria-label="Social media">
+            <a href="#" class="social-btn" aria-label="Follow on Facebook">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+            </a>
+            <a href="#" class="social-btn" aria-label="Follow on Instagram">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><circle cx="17.5" cy="6.5" r=".5" fill="currentColor"/></svg>
+            </a>
+            <a href="#" class="social-btn" aria-label="Follow on LinkedIn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+            </a>
+            <a href="#" class="social-btn" aria-label="Subscribe on YouTube">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M22.54 6.42a2.78 2.78 0 00-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 00-1.95 1.96A29 29 0 001 12a29 29 0 00.46 5.58A2.78 2.78 0 003.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.4a2.78 2.78 0 001.95-1.96A29 29 0 0023 12a29 29 0 00-.46-5.58zM9.75 15.02V8.98L15.5 12l-5.75 3.02z"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul class="footer-list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="courses.html">Courses</a></li>
+            <li><a href="training.html">Training Programs</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="alumni.html">Alumni</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="review.html">Reviews</a></li>
+            <li><a href="ragister.html">Register</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Course Categories</h4>
+          <ul class="footer-list">
+            <li><a href="courses.html#cat-redhat">RedHat Courses</a></li>
+            <li><a href="courses.html#cat-cloud">Cloud Computing</a></li>
+            <li><a href="courses.html#cat-devops">DevOps</a></li>
+            <li><a href="courses.html#cat-datascience">Data Science &amp; AI</a></li>
+            <li><a href="courses.html#cat-azure">Azure / Cloud Infra</a></li>
+            <li><a href="courses.html#cat-networking">Networking &amp; SysAdmin</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col footer-contact-col">
+          <h4>Contact</h4>
+          <address class="footer-address">
+            <div class="fc-item">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              <span>1st Floor, Ward No-21, Pragati Building,<br>Pragati Nagar Path, Banik Para,<br>Lal Ganesh, Guwahati,<br>Kamrup Metro, Assam 781034</span>
+            </div>
+            <div class="fc-item">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              <a href="mailto:info@luitechsolutions.com">info@luitechsolutions.com</a>
+            </div>
+          </address>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© <span id="copy-year"></span> LUITECH. All rights reserved.</p>
+        <p class="footer-credit">Designed &amp; Developed with ♥ in Guwahati, Assam</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ══════════════ LIGHTBOX ══════════════ -->
+  <div class="lightbox-overlay" id="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer" aria-hidden="true">
+    <button class="lb-close" id="lb-close" aria-label="Close image viewer">
+      <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M2 2l14 14M16 2L2 16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+    </button>
+    <button class="lb-nav lb-prev" id="lb-prev" aria-label="Previous image">
+      <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M13 4l-6 6 6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+    </button>
+    <div class="lightbox-inner" id="lb-inner">
+      <div class="lightbox-img-wrap">
+        <div class="lb-placeholder" id="lb-placeholder" aria-hidden="true"></div>
+      </div>
+      <p class="lightbox-caption" id="lb-caption"></p>
+    </div>
+    <button class="lb-nav lb-next" id="lb-next" aria-label="Next image">
+      <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M7 4l6 6-6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+    </button>
+    <div class="lb-counter" id="lb-counter"></div>
+  </div>
+
+  <script src="js/script.js"></script>
+  <script>
+    (function () {
+      'use strict';
+
+      /* ── FOOTER YEAR ── */
+      const yr = document.getElementById('copy-year');
+      if (yr) yr.textContent = new Date().getFullYear();
+
+      /* ── NAVBAR ── */
+      const navbar = document.getElementById('navbar');
+      window.addEventListener('scroll', () => {
+        navbar.classList.toggle('solid', window.scrollY > 40);
+      }, { passive: true });
+
+      /* ── BURGER / DRAWER ── */
+      const burger = document.getElementById('burger');
+      const drawer = document.getElementById('mobile-nav');
+      const backdrop = document.getElementById('drawer-backdrop');
+      function openDrawer() { drawer.classList.add('open'); drawer.setAttribute('aria-hidden','false'); burger.classList.add('open'); burger.setAttribute('aria-expanded','true'); document.body.style.overflow='hidden'; }
+      function closeDrawer() { drawer.classList.remove('open'); drawer.setAttribute('aria-hidden','true'); burger.classList.remove('open'); burger.setAttribute('aria-expanded','false'); document.body.style.overflow=''; }
+      burger && burger.addEventListener('click', () => drawer.classList.contains('open') ? closeDrawer() : openDrawer());
+      backdrop && backdrop.addEventListener('click', closeDrawer);
+      document.querySelectorAll('.drawer-link').forEach(l => l.addEventListener('click', closeDrawer));
+      document.addEventListener('keydown', e => { if (e.key === 'Escape') closeDrawer(); });
+
+      /* ── SCROLL REVEAL ── */
+      const revealObs = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) { entry.target.classList.add('in'); revealObs.unobserve(entry.target); }
+        });
+      }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+      document.querySelectorAll('.reveal-fade, .reveal-up').forEach(el => revealObs.observe(el));
+
+      /* ── COUNT UP ── */
+      function easeOut(t) { return 1 - Math.pow(1-t, 4); }
+      function animCount(el) {
+        const target = +el.dataset.target;
+        const dur = 1800;
+        const start = performance.now();
+        function tick(now) {
+          const p = Math.min((now - start) / dur, 1);
+          el.textContent = Math.round(easeOut(p) * target).toLocaleString();
+          if (p < 1) requestAnimationFrame(tick);
+        }
+        requestAnimationFrame(tick);
+      }
+      const countObs = new IntersectionObserver(entries => {
+        entries.forEach(e => { if (e.isIntersecting) { animCount(e.target); countObs.unobserve(e.target); } });
+      }, { threshold: 0.5 });
+      document.querySelectorAll('.count-up').forEach(el => countObs.observe(el));
+
+      /* ── FILTER TABS ── */
+      const filterBtns = document.querySelectorAll('.filter-btn');
+      const categories = document.querySelectorAll('.masonry-category');
+
+      filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          filterBtns.forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          const filter = btn.dataset.filter;
+          categories.forEach(cat => {
+            if (filter === 'all' || cat.dataset.category === filter) {
+              cat.style.display = '';
+              cat.style.animation = 'none';
+              requestAnimationFrame(() => { cat.style.animation = ''; });
+            } else {
+              cat.style.display = 'none';
+            }
+          });
+        });
+      });
+
+      /* ── LIGHTBOX ── */
+      const items = document.querySelectorAll('.masonry-item');
+      const lightbox = document.getElementById('lightbox');
+      const lbCaption = document.getElementById('lb-caption');
+      const lbPlaceholder = document.getElementById('lb-placeholder');
+      const lbCounter = document.getElementById('lb-counter');
+      const lbClose = document.getElementById('lb-close');
+      const lbPrev = document.getElementById('lb-prev');
+      const lbNext = document.getElementById('lb-next');
+
+      let currentIdx = 0;
+      const visibleItems = () => [...document.querySelectorAll('.masonry-item')].filter(
+        el => el.closest('.masonry-category').style.display !== 'none'
+      );
+
+      function openLightbox(idx) {
+        const visible = visibleItems();
+        if (!visible.length) return;
+        currentIdx = Math.max(0, Math.min(idx, visible.length - 1));
+        const item = visible[currentIdx];
+        // Match bg from placeholder
+        const ph = item.querySelector('.img-placeholder');
+        const bg = ph ? getComputedStyle(ph).background : '#111';
+        lbPlaceholder.style.background = bg;
+        lbCaption.textContent = item.dataset.caption || '';
+        lbCounter.textContent = (currentIdx + 1) + ' / ' + visible.length;
+        lightbox.classList.add('open');
+        lightbox.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+        lbClose.focus();
+      }
+
+      function closeLightbox() {
+        lightbox.classList.remove('open');
+        lightbox.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+      }
+
+      items.forEach((item, i) => {
+        item.addEventListener('click', () => {
+          const visible = visibleItems();
+          const idx = visible.indexOf(item);
+          openLightbox(idx >= 0 ? idx : 0);
+        });
+        item.addEventListener('keydown', e => {
+          if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); item.click(); }
+        });
+      });
+
+      lbClose && lbClose.addEventListener('click', closeLightbox);
+      lbPrev && lbPrev.addEventListener('click', () => openLightbox(currentIdx - 1 < 0 ? visibleItems().length - 1 : currentIdx - 1));
+      lbNext && lbNext.addEventListener('click', () => openLightbox((currentIdx + 1) % visibleItems().length));
+
+      lightbox.addEventListener('click', e => { if (e.target === lightbox) closeLightbox(); });
+      document.addEventListener('keydown', e => {
+        if (!lightbox.classList.contains('open')) return;
+        if (e.key === 'Escape') closeLightbox();
+        if (e.key === 'ArrowLeft') lbPrev.click();
+        if (e.key === 'ArrowRight') lbNext.click();
+      });
+
+      /* ── CUSTOM CURSOR ── */
+      if (window.matchMedia('(pointer:fine)').matches) {
+        const cursor = document.getElementById('cursor');
+        const dot = document.getElementById('cursor-dot');
+        if (cursor) {
+          let cx=0,cy=0,tx=0,ty=0;
+          function moveCursor(){ cx+=(tx-cx)*.14; cy+=(ty-cy)*.14; cursor.style.left=cx+'px'; cursor.style.top=cy+'px'; requestAnimationFrame(moveCursor); }
+          document.addEventListener('mousemove',e=>{ tx=e.clientX; ty=e.clientY; dot.style.left=e.clientX+'px'; dot.style.top=e.clientY+'px'; },{passive:true});
+          moveCursor();
+          document.querySelectorAll('a,button,.masonry-item').forEach(el=>{
+            el.addEventListener('mouseenter',()=>cursor.classList.add('hovering'));
+            el.addEventListener('mouseleave',()=>cursor.classList.remove('hovering'));
+          });
+        }
+      }
+
+    })();
+  </script>
+  <script src="js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,1017 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="LUITECH Solutions Alumni — Meet our successful graduates who have built thriving IT careers at TCS, Infosys, Wipro, Accenture and more. 300+ students placed in top companies.">
+  <meta name="keywords" content="LUITECH alumni, IT placement Guwahati, TCS placement Assam, IT job Guwahati, successful IT students, LUITECH graduates">
+  <meta name="author" content="LUITECH Solutions">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="Successful Alumni | LUITECH Solutions">
+  <meta property="og:description" content="Meet LUITECH graduates who have built successful IT careers at top companies. 300+ students placed with top tech firms.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="en_IN">
+  <title>Successful Alumni | LUITECH Solutions</title>
+  <link rel="icon" type="image/png" href="logo.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Clash+Display:wght@400;500;600;700&family=Bricolage+Grotesque:opsz,wght@12..96,300;12..96,400;12..96,500;12..96,600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* ═══════════ ALUMNI PAGE STYLES ═══════════ */
+
+    /* ── PAGE HERO ── */
+    .page-hero {
+      padding: calc(var(--nav-h) + 5rem) 0 5rem;
+      background: var(--off-white);
+      position: relative;
+      overflow: hidden;
+      text-align: center;
+    }
+    .page-hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(225,29,46,.06), transparent 70%);
+      pointer-events: none;
+    }
+    .page-hero-grid {
+      position: absolute; inset: 0; pointer-events: none;
+      background-image:
+        linear-gradient(rgba(0,0,0,.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0,0,0,.04) 1px, transparent 1px);
+      background-size: 48px 48px;
+      mask-image: radial-gradient(ellipse 70% 100% at 50% 0%, black, transparent);
+    }
+    .page-hero-content { position: relative; z-index: 2; }
+    .page-hero h1 {
+      font-size: clamp(2.4rem, 5vw, 4rem);
+      letter-spacing: -0.04em;
+      margin: .75rem 0 1.1rem;
+      color: var(--black);
+    }
+    .page-hero h1 em { font-style: italic; color: var(--red); }
+    .page-hero > .container > p, .page-hero-content > p {
+      font-size: 1.1rem;
+      max-width: 540px;
+      margin: 0 auto;
+      color: var(--text-muted);
+    }
+
+    /* ── PLACEMENT STATS BAND ── */
+    .placement-band {
+      background: var(--black);
+      padding: 44px 0;
+    }
+    .placement-band-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+      text-align: center;
+    }
+    .pb-stat {
+      padding: 0 2rem;
+      border-right: 1px solid rgba(255,255,255,.07);
+    }
+    .pb-stat:last-child { border-right: none; }
+    .pb-num {
+      font-family: 'Clash Display', sans-serif;
+      font-size: 2.4rem; font-weight: 700;
+      color: #fff; letter-spacing: -0.04em; display: block;
+    }
+    .pb-num em { font-style: normal; color: var(--red); }
+    .pb-label {
+      font-size: .76rem; color: rgba(255,255,255,.3);
+      text-transform: uppercase; letter-spacing: .1em;
+      margin-top: .2rem; display: block;
+    }
+
+    /* ── ALUMNI GRID SECTION ── */
+    .alumni-section { background: var(--white); }
+
+    .alumni-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
+    }
+
+    .alumni-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--r-lg);
+      padding: 1.75rem 1.5rem;
+      text-align: center;
+      transition: transform .4s var(--ease-spring), box-shadow .4s, border-color .3s;
+      position: relative;
+      overflow: hidden;
+    }
+    .alumni-card::before {
+      content: '';
+      position: absolute; top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--red), transparent);
+      opacity: 0;
+      transition: opacity .3s;
+    }
+    .alumni-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 60px rgba(0,0,0,.1);
+      border-color: rgba(225,29,46,.15);
+    }
+    .alumni-card:hover::before { opacity: 1; }
+
+    .alumni-avatar {
+      width: 80px; height: 80px;
+      border-radius: 50%;
+      margin: 0 auto 1.1rem;
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Clash Display', sans-serif;
+      font-size: 1.75rem; font-weight: 700;
+      color: #fff;
+      position: relative;
+      overflow: hidden;
+    }
+    .alumni-avatar::after {
+      content: '';
+      position: absolute; inset: 0;
+      border-radius: 50%;
+      box-shadow: inset 0 0 0 2px rgba(255,255,255,.15);
+    }
+    /* Avatar gradient themes */
+    .av-1 { background: linear-gradient(135deg, #E11D2E, #b7121d); }
+    .av-2 { background: linear-gradient(135deg, #1a3a6e, #0d2044); }
+    .av-3 { background: linear-gradient(135deg, #065f46, #022c22); }
+    .av-4 { background: linear-gradient(135deg, #7c3aed, #4c1d95); }
+    .av-5 { background: linear-gradient(135deg, #d97706, #92400e); }
+    .av-6 { background: linear-gradient(135deg, #0e7490, #164e63); }
+    .av-7 { background: linear-gradient(135deg, #be185d, #831843); }
+    .av-8 { background: linear-gradient(135deg, #4338ca, #312e81); }
+    .av-9 { background: linear-gradient(135deg, #059669, #064e3b); }
+    .av-10{ background: linear-gradient(135deg, #b45309, #78350f); }
+    .av-11{ background: linear-gradient(135deg, #dc2626, #7f1d1d); }
+    .av-12{ background: linear-gradient(135deg, #0891b2, #0c4a6e); }
+
+    .alumni-name {
+      font-family: 'Clash Display', sans-serif;
+      font-size: 1.05rem; font-weight: 700;
+      letter-spacing: -0.02em;
+      color: var(--black);
+      margin-bottom: .3rem;
+    }
+    .alumni-course {
+      font-size: .76rem; font-weight: 600;
+      color: var(--red); text-transform: uppercase;
+      letter-spacing: .06em; margin-bottom: .9rem;
+    }
+    .alumni-divider {
+      width: 32px; height: 1px;
+      background: var(--border);
+      margin: 0 auto .9rem;
+    }
+    .alumni-company-row {
+      display: flex; align-items: center; justify-content: center; gap: .5rem;
+      margin-bottom: .5rem;
+    }
+    .company-dot {
+      width: 8px; height: 8px; border-radius: 50%;
+      background: var(--red); flex-shrink: 0;
+      opacity: .6;
+    }
+    .alumni-company {
+      font-size: .88rem; font-weight: 600;
+      color: var(--black);
+    }
+    .alumni-package {
+      display: inline-flex; align-items: center; gap: .3rem;
+      font-size: .74rem; font-weight: 700;
+      color: #059669; background: rgba(5,150,105,.08);
+      border: 1px solid rgba(5,150,105,.15);
+      padding: .2rem .65rem; border-radius: 50px;
+      margin-top: .5rem;
+    }
+    .alumni-package svg { width: 10px; height: 10px; }
+
+    .alumni-batch-tag {
+      position: absolute; top: 1rem; right: 1rem;
+      font-size: .64rem; font-weight: 700;
+      letter-spacing: .07em; text-transform: uppercase;
+      color: var(--text-ghost);
+      background: var(--surface);
+      padding: .2rem .55rem; border-radius: 50px;
+    }
+
+    /* ── COMPANIES SECTION ── */
+    .companies-section { background: var(--off-white); }
+    .companies-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.25rem;
+      justify-content: center;
+      align-items: center;
+    }
+    .company-logo-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--r);
+      padding: 1.25rem 2.25rem;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center; gap: .5rem;
+      min-width: 160px;
+      transition: transform .3s var(--ease-spring), box-shadow .3s, border-color .3s;
+      cursor: default;
+    }
+    .company-logo-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
+      border-color: rgba(225,29,46,.2);
+    }
+    .company-logo-card .company-abbr {
+      font-family: 'Clash Display', sans-serif;
+      font-size: 1.4rem; font-weight: 700;
+      letter-spacing: -0.02em;
+      color: var(--black);
+    }
+    .company-logo-card .company-tag {
+      font-size: .68rem; font-weight: 600;
+      color: var(--text-ghost); text-transform: uppercase;
+      letter-spacing: .08em;
+    }
+    .company-logo-card .placed-count {
+      font-size: .72rem; font-weight: 700;
+      color: var(--red);
+      background: var(--red-alpha);
+      padding: .15rem .5rem; border-radius: 50px;
+    }
+
+    /* ── TESTIMONIAL SLIDER ── */
+    .alumni-testimonials { background: var(--black); overflow: hidden; }
+    .alumni-testimonials .section-eyebrow { color: rgba(255,255,255,.4); border-color: rgba(255,255,255,.12); }
+    .alumni-testimonials .section-header h2 { color: #fff; }
+
+    .alumni-slider {
+      position: relative;
+      overflow: hidden;
+    }
+    .alumni-track {
+      display: flex;
+      transition: transform .65s cubic-bezier(.25,.46,.45,.94);
+    }
+    .alumni-slide {
+      min-width: 100%;
+      padding: 0 1rem;
+    }
+    .alumni-slide-inner {
+      max-width: 820px;
+      margin: 0 auto;
+      background: rgba(255,255,255,.04);
+      border: 1px solid rgba(255,255,255,.08);
+      border-radius: var(--r-lg);
+      padding: 3rem;
+      display: flex;
+      gap: 2.5rem;
+      align-items: flex-start;
+    }
+    .slide-avatar {
+      width: 72px; height: 72px;
+      border-radius: 50%;
+      flex-shrink: 0;
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Clash Display', sans-serif;
+      font-size: 1.5rem; font-weight: 700; color: #fff;
+    }
+    .slide-content { flex: 1; }
+    .slide-quote {
+      font-size: 1.05rem;
+      line-height: 1.75;
+      color: rgba(255,255,255,.7);
+      margin-bottom: 1.5rem;
+      font-style: italic;
+    }
+    .slide-quote::before { content: '\201C'; color: var(--red); font-size: 1.5em; line-height: 0; vertical-align: -0.3em; margin-right: .15em; }
+    .slide-quote::after  { content: '\201D'; color: var(--red); font-size: 1.5em; line-height: 0; vertical-align: -0.3em; margin-left:  .15em; }
+    .slide-name {
+      font-family: 'Clash Display', sans-serif;
+      font-size: 1rem; font-weight: 700;
+      color: #fff; letter-spacing: -0.02em;
+    }
+    .slide-meta {
+      font-size: .78rem; color: rgba(255,255,255,.35);
+      margin-top: .2rem;
+    }
+    .slide-company-badge {
+      display: inline-flex; align-items: center; gap: .3rem;
+      font-size: .72rem; font-weight: 700; color: var(--red);
+      background: var(--red-alpha);
+      border: 1px solid rgba(225,29,46,.2);
+      padding: .2rem .65rem; border-radius: 50px;
+      margin-top: .6rem;
+    }
+
+    /* Slider controls */
+    .alumni-slider-controls {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1.5rem;
+      margin-top: 2.5rem;
+    }
+    .asl-btn {
+      width: 44px; height: 44px; border-radius: 50%;
+      background: rgba(255,255,255,.06);
+      border: 1px solid rgba(255,255,255,.1);
+      color: rgba(255,255,255,.6);
+      display: flex; align-items: center; justify-content: center;
+      cursor: pointer;
+      transition: background .2s, color .2s, transform .2s var(--ease-spring);
+    }
+    .asl-btn:hover { background: rgba(255,255,255,.14); color: #fff; transform: scale(1.08); }
+    .asl-dots { display: flex; gap: .5rem; }
+    .asl-dot {
+      width: 6px; height: 6px; border-radius: 50%;
+      background: rgba(255,255,255,.18);
+      border: none; cursor: pointer; padding: 0;
+      transition: background .3s, transform .3s, width .3s;
+    }
+    .asl-dot.active {
+      background: var(--red);
+      width: 24px; border-radius: 3px;
+    }
+
+    /* ── SUCCESS PATH SECTION ── */
+    .success-path { background: var(--off-white); }
+    .path-steps {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+      position: relative;
+    }
+    .path-steps::before {
+      content: '';
+      position: absolute;
+      top: 36px; left: calc(12.5% + 20px); right: calc(12.5% + 20px);
+      height: 1px;
+      background: linear-gradient(90deg, var(--red), transparent 50%, var(--red));
+      opacity: .3;
+    }
+    .path-step {
+      text-align: center;
+      padding: 0 1.5rem 3rem;
+    }
+    .path-step-num {
+      width: 56px; height: 56px; border-radius: 50%;
+      background: var(--white);
+      border: 1.5px solid var(--border);
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Clash Display', sans-serif;
+      font-size: 1.1rem; font-weight: 700;
+      color: var(--red);
+      margin: 0 auto 1.25rem;
+      position: relative; z-index: 1;
+      transition: background .3s, border-color .3s, transform .3s var(--ease-spring);
+    }
+    .path-step:hover .path-step-num {
+      background: var(--red); color: #fff;
+      border-color: var(--red);
+      transform: scale(1.1);
+    }
+    .path-step h3 {
+      font-size: 1rem; letter-spacing: -0.02em;
+      margin-bottom: .5rem;
+    }
+    .path-step p {
+      font-size: .84rem; line-height: 1.65; max-width: 200px; margin: 0 auto;
+    }
+
+    /* RESPONSIVE */
+    @media(max-width: 1200px) {
+      .alumni-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+    @media(max-width: 1024px) {
+      .alumni-grid { grid-template-columns: repeat(2, 1fr); }
+      .placement-band-grid { grid-template-columns: repeat(2, 1fr); gap: 1.5rem 0; }
+      .pb-stat { border-right: none; }
+      .pb-stat:nth-child(odd) { border-right: 1px solid rgba(255,255,255,.07); }
+      .path-steps { grid-template-columns: repeat(2, 1fr); }
+      .path-steps::before { display: none; }
+    }
+    @media(max-width: 768px) {
+      .alumni-grid { grid-template-columns: 1fr; max-width: 420px; margin: 0 auto; }
+      .companies-grid { gap: .75rem; }
+      .company-logo-card { min-width: 130px; padding: 1rem 1.5rem; }
+      .alumni-slide-inner { flex-direction: column; gap: 1.5rem; padding: 2rem 1.5rem; }
+      .page-hero { padding: calc(var(--nav-h) + 3rem) 0 3.5rem; }
+      .path-steps { grid-template-columns: 1fr 1fr; }
+      .placement-band { padding: 36px 0; }
+    }
+    @media(max-width: 480px) {
+      .alumni-grid { max-width: 100%; }
+      .path-steps { grid-template-columns: 1fr; }
+      .path-steps::before { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="noise-overlay" aria-hidden="true"></div>
+  <div class="cursor" id="cursor" aria-hidden="true"></div>
+  <div class="cursor-dot" id="cursor-dot" aria-hidden="true"></div>
+
+  <!-- ══════════════ NAVBAR ══════════════ -->
+  <header class="navbar solid" id="navbar" role="banner">
+    <div class="nav-inner">
+      <div class="logo" aria-label="LUITECH Solutions — Home">
+        <div class="logo-icon" aria-hidden="true">
+          <img src="logo1.png" alt="LUITECH Logo" width="150" height="100">
+        </div>
+      </div>
+      <nav class="nav-menu" id="nav-menu" role="navigation" aria-label="Primary navigation">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="courses.html" class="nav-link">Courses</a>
+        <a href="training.html" class="nav-link">Training</a>
+        <a href="gallery.html" class="nav-link">Gallery</a>
+        <a href="alumni.html" class="nav-link" aria-current="page" style="color:var(--red)">Alumni</a>
+        <a href="blog.html" class="nav-link">Blog</a>
+        <a href="review.html" class="nav-link">Reviews</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+        <a href="ragister.html" class="nav-link nav-register">Register</a>
+      </nav>
+      <button class="burger" id="burger" aria-label="Open navigation" aria-expanded="false" aria-controls="mobile-nav">
+        <span class="burger-bar"></span>
+        <span class="burger-bar"></span>
+        <span class="burger-bar"></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ── MOBILE DRAWER ── -->
+  <div class="mobile-drawer" id="mobile-nav" role="dialog" aria-modal="true" aria-label="Navigation menu" aria-hidden="true">
+    <div class="drawer-backdrop" id="drawer-backdrop"></div>
+    <nav class="drawer-panel" role="navigation">
+      <div class="drawer-links">
+        <p>...</p>
+        <a href="index.html" class="drawer-link">Home</a>
+        <a href="about.html" class="drawer-link">About</a>
+        <a href="courses.html" class="drawer-link">Courses</a>
+        <a href="training.html" class="drawer-link">Training</a>
+        <a href="gallery.html" class="drawer-link">Gallery</a>
+        <a href="alumni.html" class="drawer-link" style="color:var(--red)">Alumni</a>
+        <a href="blog.html" class="drawer-link">Blog</a>
+        <a href="review.html" class="drawer-link">Reviews</a>
+        <a href="contact.html" class="drawer-link">Contact</a>
+        <a href="ragister.html" class="drawer-link drawer-register">Register Now →</a>
+      </div>
+    </nav>
+  </div>
+
+  <main>
+
+    <!-- ══════════════ HERO ══════════════ -->
+    <section class="page-hero" aria-labelledby="alumni-h1">
+      <div class="page-hero-grid" aria-hidden="true"></div>
+      <div class="container page-hero-content">
+        <p class="section-eyebrow reveal-fade" style="--rd:0s">Hall of Excellence</p>
+        <h1 id="alumni-h1" class="reveal-fade" style="--rd:.08s">
+          Our <em>Successful</em> Alumni
+        </h1>
+        <p class="reveal-fade" style="--rd:.16s">
+          Meet LUITECH students who have built successful careers at India's top IT companies. Their journey starts here.
+        </p>
+      </div>
+    </section>
+
+    <!-- ══════════════ STATS BAND ══════════════ -->
+    <div class="placement-band" aria-label="Placement Statistics">
+      <div class="container">
+        <div class="placement-band-grid">
+          <div class="pb-stat reveal-fade" style="--rd:0s">
+            <span class="pb-num"><span class="count-up" data-target="300">0</span><em>+</em></span>
+            <span class="pb-label">Students Placed</span>
+          </div>
+          <div class="pb-stat reveal-fade" style="--rd:.1s">
+            <span class="pb-num"><span class="count-up" data-target="50">0</span><em>+</em></span>
+            <span class="pb-label">Partner Companies</span>
+          </div>
+          <div class="pb-stat reveal-fade" style="--rd:.2s">
+            <span class="pb-num"><em>₹</em><span class="count-up" data-target="8">0</span><em> LPA</em></span>
+            <span class="pb-label">Highest Package</span>
+          </div>
+          <div class="pb-stat reveal-fade" style="--rd:.3s">
+            <span class="pb-num"><span class="count-up" data-target="92">0</span><em>%</em></span>
+            <span class="pb-label">Placement Rate</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══════════════ ALUMNI GRID ══════════════ -->
+    <section class="alumni-section section" aria-labelledby="alumni-grid-h">
+      <div class="container">
+        <div class="section-header reveal-fade">
+          <p class="section-eyebrow">Our Achievers</p>
+          <h2 id="alumni-grid-h">Alumni <span class="text-red">Success</span> Stories</h2>
+          <p class="section-sub">Real students. Real jobs. Real success. Here's where our alumni landed after training with LUITECH.</p>
+        </div>
+
+        <div class="alumni-grid">
+
+  <!-- Card 1 -->
+  <article class="alumni-card reveal-up" style="--rd:0s">
+    <div class="alumni-avatar av-1">JP</div>
+    <div class="alumni-name">Jyoti Prasad Goswami</div>
+    <div class="alumni-company">CIPL</div>
+  </article>
+
+  <!-- Card 2 -->
+  <article class="alumni-card reveal-up" style="--rd:.05s">
+    <div class="alumni-avatar av-2">MD</div>
+    <div class="alumni-name">Mridu Sankar Das</div>
+    <div class="alumni-company">Maney Publishing</div>
+  </article>
+
+  <!-- Card 3 -->
+  <article class="alumni-card reveal-up" style="--rd:.1s">
+    <div class="alumni-avatar av-3">DD</div>
+    <div class="alumni-name">Debojit Das (BE)</div>
+    <div class="alumni-company">Jio</div>
+  </article>
+
+  <!-- Card 4 -->
+  <article class="alumni-card reveal-up" style="--rd:.15s">
+    <div class="alumni-avatar av-4">RL</div>
+    <div class="alumni-name">Rezuwan Laskar</div>
+    <div class="alumni-company">Dell</div>
+  </article>
+
+  <!-- Card 5 -->
+  <article class="alumni-card reveal-up" style="--rd:0s">
+    <div class="alumni-avatar av-5">HN</div>
+    <div class="alumni-name">Harsharaj Nath</div>
+    <div class="alumni-company">Continental</div>
+  </article>
+
+  <!-- Card 6 -->
+  <article class="alumni-card reveal-up" style="--rd:.05s">
+    <div class="alumni-avatar av-6">MB</div>
+    <div class="alumni-name">Manish Baruah</div>
+    <div class="alumni-company">Trans Virtual Pvt Limited</div>
+  </article>
+
+  <!-- Card 7 -->
+  <article class="alumni-card reveal-up" style="--rd:.1s">
+    <div class="alumni-avatar av-7">ND</div>
+    <div class="alumni-name">Niren Deori</div>
+    <div class="alumni-company">Interlace India</div>
+  </article>
+
+  <!-- Card 8 -->
+  <article class="alumni-card reveal-up" style="--rd:.15s">
+    <div class="alumni-avatar av-8">PP</div>
+    <div class="alumni-name">Pradyut Paul</div>
+    <div class="alumni-company">Nokia</div>
+  </article>
+
+  <!-- Card 9 -->
+  <article class="alumni-card reveal-up" style="--rd:0s">
+    <div class="alumni-avatar av-9">DJ</div>
+    <div class="alumni-name">Deep Jyoti Rabha</div>
+    <div class="alumni-company">Wizertech Informatics Pvt Ltd</div>
+  </article>
+
+       </div>
+      </div>
+    </section>
+
+    <!-- ══════════════ PLACEMENT COMPANIES ══════════════ -->
+    <section class="companies-section section" aria-labelledby="companies-h">
+      <div class="container">
+        <div class="section-header reveal-fade">
+          <p class="section-eyebrow">Our Hiring Partners</p>
+          <h2 id="companies-h">Where Our Alumni <span class="text-red">Work</span></h2>
+          <p class="section-sub">Top MNCs and IT firms that actively hire LUITECH graduates year after year.</p>
+        </div>
+
+        <div class="companies-grid">
+          <div class="company-logo-card reveal-up" style="--rd:0s">
+            <span class="company-abbr">TCS</span>
+            <span class="company-tag">Tata Consultancy</span>
+            <!-- <span class="placed-count">45+ placed</span> -->
+          </div>
+          <div class="company-logo-card reveal-up" style="--rd:.04s">
+            <span class="company-abbr">Infosys</span>
+            <span class="company-tag">Infosys Ltd.</span>
+            <!-- <span class="placed-count">38+ placed</span> -->
+          </div>
+          <div class="company-logo-card reveal-up" style="--rd:.08s">
+            <span class="company-abbr">Wipro</span>
+            <span class="company-tag">Wipro Tech</span>
+            <!-- <span class="placed-count">32+ placed</span> -->
+          </div>
+          <div class="company-logo-card reveal-up" style="--rd:.12s">
+            <span class="company-abbr">Accenture</span>
+            <span class="company-tag">Accenture India</span>
+            <!-- <span class="placed-count">28+ placed</span> -->
+          </div>
+          <div class="company-logo-card reveal-up" style="--rd:.16s">
+            <span class="company-abbr">Capgemini</span>
+            <span class="company-tag">Capgemini SE</span>
+            <!-- <span class="placed-count">22+ placed</span> -->
+          </div>
+          <div class="company-logo-card reveal-up" style="--rd:.2s">
+            <span class="company-abbr">HCL</span>
+            <span class="company-tag">HCL Technologies</span>
+            <!-- <span class="placed-count">20+ placed</span> -->
+          </div>
+          <div class="company-logo-card reveal-up" style="--rd:.24s">
+            <span class="company-abbr">IBM</span>
+            <span class="company-tag">IBM India</span>
+            <!-- <span class="placed-count">15+ placed</span> -->
+          </div>
+          <div class="company-logo-card reveal-up" style="--rd:.28s">
+            <span class="company-abbr">Cognizant</span>
+            <span class="company-tag">CTS / CTG</span>
+            <!-- <span class="placed-count">18+ placed</span> -->
+          </div>
+          <div class="company-logo-card reveal-up" style="--rd:.32s">
+            <span class="company-abbr">Tech M</span>
+            <span class="company-tag">Tech Mahindra</span>
+            <!-- <span class="placed-count">14+ placed</span> -->
+          </div>
+          <div class="company-logo-card reveal-up" style="--rd:.36s">
+            <span class="company-abbr">Persistent</span>
+            <span class="company-tag">Persistent Systems</span>
+            <!-- <span class="placed-count">10+ placed</span> -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════ TESTIMONIAL SLIDER ══════════════ -->
+    <section class="alumni-testimonials section" aria-labelledby="testimonials-h">
+      <div class="container">
+        <div class="section-header reveal-fade">
+          <p class="section-eyebrow">What They Say</p>
+          <h2 id="testimonials-h">Alumni <span style="color:var(--red)">Testimonials</span></h2>
+          <p class="section-sub" style="color:rgba(255,255,255,.4)">In their own words — how LUITECH changed the trajectory of their careers.</p>
+        </div>
+
+        <div class="alumni-slider" aria-live="polite" aria-atomic="true">
+          <div class="alumni-track" id="alumni-track">
+
+            <div class="alumni-slide" role="group" aria-label="Testimonial 1 of 5">
+              <div class="alumni-slide-inner">
+                <div class="slide-avatar av-1" aria-hidden="true" style="background:linear-gradient(135deg,#E11D2E,#b7121d)">MB</div>
+                <div class="slide-content">
+                  <p class="slide-quote">The guidance, practical exposure, and consistent mentorship helped me build strong technical foundations. The placement support was structured and result-oriented, which played a crucial role in securing my position. I’m truly grateful for the learning experience..</p>
+                  <div class="slide-name">Manish Baruah</div>
+                  <div class="slide-meta">Software Developer</div>
+                  <div class="slide-company-badge">
+                    <svg width="8" height="8" viewBox="0 0 8 8" fill="none"><circle cx="4" cy="4" r="3" fill="currentColor"/></svg>
+                    Trans Virtual Pvt Ltd
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="alumni-slide" role="group" aria-label="Testimonial 2 of 5">
+              <div class="alumni-slide-inner">
+                <div class="slide-avatar" aria-hidden="true" style="background:linear-gradient(135deg,#7c3aed,#4c1d95)">ND</div>
+                <div class="slide-content">
+                  <p class="slide-quote">The training was highly practical and industry-focused. From basics to advanced concepts, everything was taught with clarity. The support during interview preparation made a huge difference in boosting my confidence..</p>
+                  <div class="slide-name">Niren Deori</div>
+                  <div class="slide-meta">Web Developer</div>
+                  <div class="slide-company-badge">
+                    <svg width="8" height="8" viewBox="0 0 8 8" fill="none"><circle cx="4" cy="4" r="3" fill="currentColor"/></svg>
+                    Interlace India
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="alumni-slide" role="group" aria-label="Testimonial 3 of 5">
+              <div class="alumni-slide-inner">
+                <div class="slide-avatar" aria-hidden="true" style="background:linear-gradient(135deg,#4338ca,#312e81)">DN</div>
+                <div class="slide-content">
+                  <p class="slide-quote">The program helped me enhance both my technical and communication skills. The structured approach and real-world projects prepared me for professional challenges. It was a great stepping stone for my career.</p>
+                  <div class="slide-name">Mridu Sankar Das</div>
+                  <div class="slide-meta">Content & Technical Associate</div>
+                  <div class="slide-company-badge">
+                    <svg width="8" height="8" viewBox="0 0 8 8" fill="none"><circle cx="4" cy="4" r="3" fill="currentColor"/></svg>
+                    IBM India 
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+            <div class="alumni-slide" role="group" aria-label="Testimonial 5 of 5">
+              <div class="alumni-slide-inner">
+                <div class="slide-avatar" aria-hidden="true" style="background:linear-gradient(135deg,#065f46,#022c22)">HN</div>
+                <div class="slide-content">
+                  <p class="slide-quote">The mentorship and curriculum were aligned with industry needs. Regular practice sessions and mock interviews helped me improve significantly. The overall experience was highly motivating and career-focused.</p>
+                  <div class="slide-name">Harsharaj Nath</div>
+                  <div class="slide-meta">Software Engineer</div>
+                  <div class="slide-company-badge">
+                    <svg width="8" height="8" viewBox="0 0 8 8" fill="none"><circle cx="4" cy="4" r="3" fill="currentColor"/></svg>
+                    Continental
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Slider Controls -->
+        <div class="alumni-slider-controls">
+          <button class="asl-btn" id="asl-prev" aria-label="Previous testimonial">
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M11 4L6 9l5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+          </button>
+          <div class="asl-dots" id="asl-dots" role="tablist" aria-label="Testimonial navigation"></div>
+          <button class="asl-btn" id="asl-next" aria-label="Next testimonial">
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M7 4l5 5-5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+          </button>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ══════════════ SUCCESS PATH ══════════════ -->
+    <section class="success-path section" aria-labelledby="path-h">
+      <div class="container">
+        <div class="section-header reveal-fade">
+          <p class="section-eyebrow">Your Journey</p>
+          <h2 id="path-h">The LUITECH <span class="text-red">Success Path</span></h2>
+          <p class="section-sub">A proven 4-step process that has taken 300+ students from beginners to placed IT professionals.</p>
+        </div>
+        <div class="path-steps">
+          <div class="path-step reveal-up" style="--rd:0s">
+            <div class="path-step-num">01</div>
+            <h3>Enroll &amp; Learn</h3>
+            <p>Join a structured, industry-curated curriculum with expert instructors and live labs.</p>
+          </div>
+          <div class="path-step reveal-up" style="--rd:.1s">
+            <div class="path-step-num">02</div>
+            <h3>Build Projects</h3>
+            <p>Work on real-world projects and build a professional portfolio that stands out.</p>
+          </div>
+          <div class="path-step reveal-up" style="--rd:.2s">
+            <div class="path-step-num">03</div>
+            <h3>Get Certified</h3>
+            <p>Earn industry-recognized certifications that validate your skills to employers.</p>
+          </div>
+          <div class="path-step reveal-up" style="--rd:.3s">
+            <div class="path-step-num">04</div>
+            <h3>Get Placed</h3>
+            <p>Our dedicated placement team connects you with top hiring companies across India.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════ CTA ══════════════ -->
+    <section class="cta-section" aria-labelledby="alumni-cta">
+      <div class="cta-canvas" aria-hidden="true">
+        <div class="cta-orb cta-orb-1"></div>
+        <div class="cta-orb cta-orb-2"></div>
+        <div class="cta-grid-lines"></div>
+      </div>
+      <div class="container">
+        <div class="cta-inner reveal-fade">
+          <p class="section-eyebrow" style="color:rgba(255,255,255,.4);border-color:rgba(255,255,255,.12)">Join the 300+ Placed Alumni</p>
+          <h2 id="alumni-cta" class="cta-headline">
+            Your Career Starts<br>at <span class="cta-red">LUITECH</span>
+          </h2>
+          <p class="cta-sub">Their story can be yours. Enroll today and let us help you land your dream IT job.</p>
+          <div class="cta-btns">
+            <a href="contact.html" class="btn-cta-primary">
+              <span>Register Now</span>
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+            </a>
+            <a href="https://wa.me/919399019999" class="btn-cta-ghost">Talk to a Counselor</a>
+          </div>
+          <p class="cta-fine">No prior experience required · Certificate on completion · Placement support included</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ══════════════ FOOTER ══════════════ -->
+  <footer class="footer" id="contact" role="contentinfo">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-col footer-about-col">
+          <div class="logo footer-logo" aria-label="LUITECH Solutions">
+            <div class="logo-icon" aria-hidden="true">
+              <img src="logo.jpg" alt="LUITECH Logo" width="32" height="32">
+            </div>
+            <div class="logo-wordmark">
+              <span class="logo-name" style="color:rgba(255,255,255,.85)">LUITECH</span>
+            </div>
+          </div>
+          <p class="footer-desc">Professional IT Training Institute in Guwahati, Assam. Empowering students with industry-ready tech skills since 2015.</p>
+          <div class="social-row" aria-label="Social media">
+            <a href="#" class="social-btn" aria-label="Follow on Facebook">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+            </a>
+            <a href="#" class="social-btn" aria-label="Follow on Instagram">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><circle cx="17.5" cy="6.5" r=".5" fill="currentColor"/></svg>
+            </a>
+            <a href="#" class="social-btn" aria-label="Follow on LinkedIn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+            </a>
+            <a href="#" class="social-btn" aria-label="Subscribe on YouTube">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M22.54 6.42a2.78 2.78 0 00-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 00-1.95 1.96A29 29 0 001 12a29 29 0 00.46 5.58A2.78 2.78 0 003.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.4a2.78 2.78 0 001.95-1.96A29 29 0 0023 12a29 29 0 00-.46-5.58zM9.75 15.02V8.98L15.5 12l-5.75 3.02z"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul class="footer-list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="courses.html">Courses</a></li>
+            <li><a href="training.html">Training Programs</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="alumni.html">Alumni</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="review.html">Reviews</a></li>
+            <li><a href="ragister.html">Register</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Course Categories</h4>
+          <ul class="footer-list">
+            <li><a href="courses.html#cat-redhat">RedHat Courses</a></li>
+            <li><a href="courses.html#cat-cloud">Cloud Computing</a></li>
+            <li><a href="courses.html#cat-devops">DevOps</a></li>
+            <li><a href="courses.html#cat-datascience">Data Science &amp; AI</a></li>
+            <li><a href="courses.html#cat-azure">Azure / Cloud Infra</a></li>
+            <li><a href="courses.html#cat-networking">Networking &amp; SysAdmin</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col footer-contact-col">
+          <h4>Contact</h4>
+          <address class="footer-address">
+            <div class="fc-item">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              <span>1st Floor, Ward No-21, Pragati Building,<br>Pragati Nagar Path, Banik Para,<br>Lal Ganesh, Guwahati,<br>Kamrup Metro, Assam 781034</span>
+            </div>
+            <div class="fc-item">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              <a href="mailto:info@luitechsolutions.com">info@luitechsolutions.com</a>
+            </div>
+          </address>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© <span id="copy-year"></span> LUITECH. All rights reserved.</p>
+        <p class="footer-credit">Designed &amp; Developed with ♥ in Guwahati, Assam</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+  <script>
+    (function () {
+      'use strict';
+
+      /* ── FOOTER YEAR ── */
+      const yr = document.getElementById('copy-year');
+      if (yr) yr.textContent = new Date().getFullYear();
+
+      /* ── NAVBAR ── */
+      const navbar = document.getElementById('navbar');
+      window.addEventListener('scroll', () => {
+        navbar.classList.toggle('solid', window.scrollY > 40);
+      }, { passive: true });
+
+      /* ── BURGER / DRAWER ── */
+      const burger = document.getElementById('burger');
+      const drawer = document.getElementById('mobile-nav');
+      const backdrop = document.getElementById('drawer-backdrop');
+      function openDrawer() { drawer.classList.add('open'); drawer.setAttribute('aria-hidden','false'); burger.classList.add('open'); burger.setAttribute('aria-expanded','true'); document.body.style.overflow='hidden'; }
+      function closeDrawer() { drawer.classList.remove('open'); drawer.setAttribute('aria-hidden','true'); burger.classList.remove('open'); burger.setAttribute('aria-expanded','false'); document.body.style.overflow=''; }
+      burger && burger.addEventListener('click', () => drawer.classList.contains('open') ? closeDrawer() : openDrawer());
+      backdrop && backdrop.addEventListener('click', closeDrawer);
+      document.querySelectorAll('.drawer-link').forEach(l => l.addEventListener('click', closeDrawer));
+      document.addEventListener('keydown', e => { if (e.key === 'Escape') closeDrawer(); });
+
+      /* ── SCROLL REVEAL ── */
+      const revealObs = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) { entry.target.classList.add('in'); revealObs.unobserve(entry.target); }
+        });
+      }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+      document.querySelectorAll('.reveal-fade, .reveal-up').forEach(el => revealObs.observe(el));
+
+      /* ── COUNT UP ── */
+      function easeOut(t) { return 1 - Math.pow(1-t, 4); }
+      function animCount(el) {
+        const target = +el.dataset.target;
+        const dur = 1800;
+        const start = performance.now();
+        function tick(now) {
+          const p = Math.min((now - start) / dur, 1);
+          el.textContent = Math.round(easeOut(p) * target).toLocaleString();
+          if (p < 1) requestAnimationFrame(tick);
+        }
+        requestAnimationFrame(tick);
+      }
+      const countObs = new IntersectionObserver(entries => {
+        entries.forEach(e => { if (e.isIntersecting) { animCount(e.target); countObs.unobserve(e.target); } });
+      }, { threshold: 0.5 });
+      document.querySelectorAll('.count-up').forEach(el => countObs.observe(el));
+
+      /* ── ALUMNI TESTIMONIAL SLIDER ── */
+      const track = document.getElementById('alumni-track');
+      const dotsContainer = document.getElementById('asl-dots');
+      const prevBtn = document.getElementById('asl-prev');
+      const nextBtn = document.getElementById('asl-next');
+
+      if (track) {
+        const slides = [...track.querySelectorAll('.alumni-slide')];
+        let current = 0;
+        let autoTimer;
+        let isAnimating = false;
+
+        // Build dots
+        slides.forEach((_, i) => {
+          const dot = document.createElement('button');
+          dot.className = 'asl-dot' + (i === 0 ? ' active' : '');
+          dot.setAttribute('role', 'tab');
+          dot.setAttribute('aria-label', `Go to testimonial ${i + 1}`);
+          dot.setAttribute('aria-selected', i === 0 ? 'true' : 'false');
+          dot.addEventListener('click', () => go(i));
+          dotsContainer.appendChild(dot);
+        });
+
+        function updateDots() {
+          [...dotsContainer.querySelectorAll('.asl-dot')].forEach((d, i) => {
+            d.classList.toggle('active', i === current);
+            d.setAttribute('aria-selected', i === current ? 'true' : 'false');
+          });
+        }
+
+        function go(index) {
+          if (isAnimating) return;
+          isAnimating = true;
+          current = ((index % slides.length) + slides.length) % slides.length;
+          track.style.transform = `translateX(-${current * 100}%)`;
+          updateDots();
+          setTimeout(() => isAnimating = false, 700);
+        }
+
+        function next() { go(current + 1); }
+        function prev() { go(current - 1); }
+        function startAuto() { autoTimer = setInterval(next, 5500); }
+        function stopAuto() { clearInterval(autoTimer); }
+
+        startAuto();
+        prevBtn && prevBtn.addEventListener('click', () => { stopAuto(); prev(); startAuto(); });
+        nextBtn && nextBtn.addEventListener('click', () => { stopAuto(); next(); startAuto(); });
+
+        // Touch swipe
+        let touchX = 0;
+        track.addEventListener('touchstart', e => { touchX = e.changedTouches[0].clientX; }, { passive: true });
+        track.addEventListener('touchend', e => {
+          const delta = touchX - e.changedTouches[0].clientX;
+          if (Math.abs(delta) > 48) { stopAuto(); delta > 0 ? next() : prev(); startAuto(); }
+        }, { passive: true });
+
+        track.addEventListener('mouseenter', stopAuto);
+        track.addEventListener('mouseleave', startAuto);
+
+        // Keyboard
+        track.setAttribute('tabindex', '0');
+        track.addEventListener('keydown', e => {
+          if (e.key === 'ArrowLeft') { stopAuto(); prev(); startAuto(); }
+          if (e.key === 'ArrowRight') { stopAuto(); next(); startAuto(); }
+        });
+      }
+
+      /* ── CUSTOM CURSOR ── */
+      if (window.matchMedia('(pointer:fine)').matches) {
+        const cursor = document.getElementById('cursor');
+        const dot = document.getElementById('cursor-dot');
+        if (cursor) {
+          let cx=0,cy=0,tx=0,ty=0;
+          function moveCursor(){ cx+=(tx-cx)*.14; cy+=(ty-cy)*.14; cursor.style.left=cx+'px'; cursor.style.top=cy+'px'; requestAnimationFrame(moveCursor); }
+          document.addEventListener('mousemove',e=>{ tx=e.clientX; ty=e.clientY; dot.style.left=e.clientX+'px'; dot.style.top=e.clientY+'px'; },{passive:true});
+          moveCursor();
+          document.querySelectorAll('a,button,.alumni-card,.company-logo-card').forEach(el=>{
+            el.addEventListener('mouseenter',()=>cursor.classList.add('hovering'));
+            el.addEventListener('mouseleave',()=>cursor.classList.remove('hovering'));
+          });
+        }
+      }
+
+    })();
+  </script>
+  <script src="js/script.js"></script>
+</body>
+</html>
